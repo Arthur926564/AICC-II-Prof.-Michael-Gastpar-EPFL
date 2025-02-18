@@ -1,0 +1,163 @@
+\lecture{1}{2025-02-18}{Discrete Probability}{}
+\section{Initial case: Finite $\Omega$: set of all possiblie outcomes}
+\begin{definition}
+\textbf{Sample space $\Omega$} is the set of all possible outcomes
+\end{definition}
+\begin{definition}
+    \textbf{Event} $E$: a subset of $\Omega$. Since the outcomes are equally likely: 
+    \[p(E) = \frac{|E|}{|\Omega|}\]
+\end{definition}
+\section{Conditional Probability}
+\begin{parag}{Conditional probability}
+    \begin{definition}
+        The \textbf{conditional probability} $p(E|F)$ is the probability that $E$ occurs, given that $F$ has occured (hence assuming that $|F| \neq 0$) : 
+        \[p(E|F) = \frac{|E \cap F|}{|F|}\]
+    \end{definition}
+\end{parag}
+\begin{parag}{Independent Events}
+    Event $E$ and $F$ are called \textbf{independent} if $p(E|F) = p(E)$
+    \begin{subparag}{Personal remark}
+        \begin{framedremark}
+            this means that even if we know that $F$ has occured the probability of $E$ is still the same.
+        \end{framedremark}
+    \end{subparag}
+\end{parag}
+\begin{parag}{General Case: Finite $\Omega$, arbitary $p(\omega)$}
+    Having equally likely outcomes is pretty rare in real life, juste take two dices and do the sum of the result and you will se that all the possible outcome doesn't have the same probability. In order to express those types of distribution we use the probability mass function:
+    \begin{definition}
+        \textbf{Sample space} $\Omega$: set of all possiblie outcomes
+        \\
+        \textbf{Probability distribution (probability mass function) $p$} : 
+        \\
+        A function $p : \Omega \to 1$ such that: 
+        \[\sum_{\omega \in \Omega} p(\omega) = 1\]
+    \end{definition}
+    If we sum up all the probablity it gives us $1$.
+     \begin{subparag}{muss function to a subset}
+         Given $E \subset \Omega$ we can define the domain of the probability mass function $p$ is extended to the power set of $\Omega$ : 
+         \[p(E) = \sum_{\omega \in E} p(\omega)\]
+     \end{subparag}
+\end{parag}
+\section{Conditional probability and Independent Events}
+\begin{parag}{General form}
+    The general form for the conditional probability is:
+    \[p(E|F) = \frac{p(E \cap F)}{p(F)}\]
+    for $F$ such that $p(F) \neq 0$
+\end{parag}
+\begin{parag}{Independet events}
+    As before $E$ and $F$ are called independent if $p(E|F) = p(E)$, Equivalently, $E$ and $F$ are independent iff $p(E \cap F) = p(E)p(F)$.
+\end{parag}
+\begin{parag}{Disjoin event}
+    if $E_1$ and $E_2$ are disjoint event then:
+    \[p(E_1 \cup E_2) = p(E_1) + p(E_2)\]
+\end{parag}
+\begin{parag}{Law of total probability}
+    For any $F \subseteq \Omega$ and its complement $F^c$,
+    \[p(E) = p(E|F)p(F) + p(E|F^c)p(F^c)\]
+    which sounds very intuitive because by definition $F$ and $F^c$ are disjoint.
+    \begin{subparag}{Generally}
+    \begin{theoreme}
+        If $\Omega$ is the union of disjoint event $F_1, F_2, \dots, F_n$ then:
+        \[p(E) = p(E|F_1)p(F_2) + p(E|F_2)p(F_2) + \cdots + p(E|F_n)p(F_n)\]
+    \end{theoreme}
+\end{subparag}
+\begin{subparag}{Proof}
+    We prove the law of total probability for $\Omega = F \cup F^c$ (the general case follows straighforwardly)
+    \begin{align*}
+        p(E) &= p((\underbrace{E \cap F) \cup(E \cap F^c)}_{\text{union of disjoint sets}})\\
+        &= p(E \cap F) + p(E \cap F^c) \\
+        &= \frac{p(E \cap F)}{p(F)}p(F) + \frac{p(E \cap F^c)}{p(F^c)}p(F^c) \\
+        &= p(E|F)p(F) + p(E|F^c)p(F^c)
+    \end{align*}
+\end{subparag}
+\end{parag}
+\begin{parag}{Bays' Rule}
+    \begin{theoreme}
+        \[p(F|E) = \frac{p(E|F)p(F)}{p(E)}\]
+    \end{theoreme}
+    \begin{subparag}{Proof}
+        We use the definition of conditional probability to write $p(E \cap F)$ two ways and solve for $p(F|E)$:
+        \[p(F|E)p(E) = p(E \cap F) = p(E|F)p(F)\]
+    \end{subparag}
+\end{parag}
+
+\section{Random variable}
+\begin{parag}{Random variable}
+    \begin{definition}
+        A Random variable is a function $X$ such as $X : \Omega \to \mathbb{R}$
+    \end{definition}
+\end{parag}
+\begin{parag}{Probability distribution}
+    $p_x$, $p_x(X = x)$ or $p_x(x)$ is the probability that $X = x$, i.e, the probability of the event
+    \[E = \{\omega \in \Omega: X(\omega) = x\}\]
+    Hence,
+    \[p_x(x) = \sum_{w \in E}p(\omega)\]
+    \begin{subparag}{Example}
+        You rolle a dice.
+        \\
+        if the outcome is $6$, you receive $10$CHF. Otherwise, you pay $1$ CHF.
+        \[\Omega = \{1, 2, 3, 4, 5,6\}\]
+        \[\text{For each }\omega,p(\omega) = \frac{1}{6}\]
+        Then define:
+        \[X(\omega) = \begin{cases}
+            10, \; \; \omega = 6 \\
+            -1, \; \; \omega \in \{1, 2, 3, 4, 5\}
+        \end{cases}\]
+        Hence, we have
+        \[p_x(X) = \begin{cases}
+            \frac{1}{6}, \; \; x = 10 \\
+            \frac{5}{6}, \; \; x = -1
+        \end{cases}\]
+    \end{subparag}
+\end{parag}
+\subsection{Two random variables}
+\begin{parag}{Two random variables}
+    \begin{definition}
+        Let $X: \Omega \to \mathbb{R}$ and $Y: \Omega \to \mathbb{R}$ be two random variables.
+        \\
+        The probability of the event $E_{x, y} = \{w \in \Omega: X(\omega) = x$ and $Y(\omega) = y\}$ is:
+        \[p_{x, y}(x, y) = \sum_{w \in E_{x, y}} p(\omega)\]
+    \end{definition}
+    \begin{itemize}
+        \item $p_x$ is called \important{marginal distribution} (of $p_{x, y}(x, y)$ with respect to $x$)
+        \item $p_y$ can be computed similarly
+    \end{itemize}
+\end{parag}
+\section{Expected Value}
+\begin{parag}{Expected value}
+    \begin{definition}
+        The expected value $\mathbb{E}[X]$ of a random variable $X:  \Omega \to \mathbb{R}$ is : 
+        \[\E[X] = \sum_\omega{X(\omega)p(\omega)}\]
+        \[= \sum_x xp_x(x)\]
+    \end{definition}
+\end{parag}
+\begin{parag}{linearity}
+    Expectation is a linear operation in the folowwing sence:
+    \\
+    Let $X_1, X_2, \dots, X_n$ be random variables and $\alpha_1, \alpha_2, \dots, \alpha_n$ be scalars. Then:
+    \[\E \left[\sum_{i=1}^n X_i\alpha_i\right] = \sum_{i=1}^n\alpha\E [X_i]\]
+\end{parag}
+\begin{parag}{Random variable and independecy}
+    Two random variable $X$ and $Y$ are independent if and only if, for all realizations $x$ and $y$:
+    \[p(\{X = x\} \cap \{Y = y\}) = p(\{X = x\}) p(\{Y = y\})\]
+    Or, more concisely, iff
+    \[p_{x, y}(x, y) = p_x(x)p_y(y)\]
+\end{parag}
+\begin{parag}{Generalization}
+    \begin{theoreme}
+        Given $n$ random variables, $X_1, \dots, X_n$ are independent if and only if:
+        \[p_{x_1, \dots, x_n}(x_1, \dots, x_n) = \prod_{i = 1}^n p_{x_i}(x_i) \]
+    \end{theoreme}
+\end{parag}
+\begin{resume}
+\begin{itemize}
+    \item Random Variable
+    \item Probability distribution
+    \begin{itemize}
+        \item Joint distribution of multiple variables
+        \item Marginal distribution
+        \item Conditional distribution
+    \end{itemize}
+    \item Independence
+\end{itemize}    
+\end{resume}
