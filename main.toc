@@ -1,0 +1,53 @@
+\babel@toc {french}{}
+\contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}About this course}{5}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Cours Grading}{5}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}How to be efficient and do well in this course}{5}{subsection.1.2.1}%
+\contentsline {section}{\numberline {1.3}Initial case: Finite $\Omega $: set of all possiblie outcomes}{6}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Conditional Probability}{6}{section.1.4}%
+\contentsline {paragraph}{Conditional probability}{6}{section*.3}%
+\contentsline {paragraph}{Independent Events}{6}{section*.4}%
+\contentsline {paragraph}{General Case: Finite $\Omega $, arbitary $p(\omega )$}{6}{section*.5}%
+\contentsline {section}{\numberline {1.5}Conditional probability and Independent Events}{7}{section.1.5}%
+\contentsline {paragraph}{General form}{7}{section*.6}%
+\contentsline {paragraph}{Independet events}{7}{section*.7}%
+\contentsline {paragraph}{Disjoin event}{7}{section*.8}%
+\contentsline {paragraph}{Law of total probability}{7}{section*.9}%
+\contentsline {paragraph}{Bays' Rule}{7}{section*.10}%
+\contentsline {section}{\numberline {1.6}Random variable}{8}{section.1.6}%
+\contentsline {paragraph}{Random variable}{8}{section*.11}%
+\contentsline {paragraph}{Probability distribution}{8}{section*.12}%
+\contentsline {subsection}{\numberline {1.6.1}Two random variables}{8}{subsection.1.6.1}%
+\contentsline {paragraph}{Two random variables}{8}{section*.13}%
+\contentsline {section}{\numberline {1.7}Expected Value}{9}{section.1.7}%
+\contentsline {paragraph}{Expected value}{9}{section*.14}%
+\contentsline {paragraph}{linearity}{9}{section*.15}%
+\contentsline {paragraph}{Random variable and independecy}{9}{section*.16}%
+\contentsline {paragraph}{Generalization}{9}{section*.17}%
+\contentsline {paragraph}{Ex hat party 1950}{9}{section*.20}%
+\contentsline {paragraph}{Entropy}{9}{section*.21}%
+\contentsline {subsection}{\numberline {1.7.1}Entropy bounds}{10}{subsection.1.7.1}%
+\contentsline {paragraph}{Bound}{10}{section*.22}%
+\contentsline {section}{\numberline {1.8}Source Coding Purpose}{10}{section.1.8}%
+\contentsline {subsection}{\numberline {1.8.1}Setup}{10}{subsection.1.8.1}%
+\contentsline {paragraph}{Setup}{10}{section*.23}%
+\contentsline {paragraph}{Example}{10}{section*.24}%
+\contentsline {paragraph}{Decodability}{10}{section*.25}%
+\contentsline {paragraph}{Prefix Free codes}{10}{section*.26}%
+\contentsline {paragraph}{Code for one random variable}{11}{section*.27}%
+\contentsline {paragraph}{Complete tree of a code}{11}{section*.28}%
+\contentsline {paragraph}{Binary tree}{11}{section*.29}%
+\contentsline {paragraph}{Ternary Tree}{11}{section*.30}%
+\contentsline {paragraph}{With/Without prefix}{11}{section*.31}%
+\contentsline {paragraph}{Decoding tree}{11}{section*.32}%
+\contentsline {subsection}{\numberline {1.8.2}Codeword length}{11}{subsection.1.8.2}%
+\contentsline {subsection}{\numberline {1.8.3}Kraft McMillan}{12}{subsection.1.8.3}%
+\contentsline {paragraph}{Part 1. Necessary condition for the code to be uniquely decodable}{12}{section*.33}%
+\contentsline {paragraph}{Recall Kraft McMillan}{12}{section*.34}%
+\contentsline {paragraph}{Proof of K-MM Part I}{12}{section*.35}%
+\contentsline {subsection}{\numberline {1.8.4}Important Consequence of Kraft McMillan}{13}{subsection.1.8.4}%
+\contentsline {paragraph}{Part I}{13}{section*.36}%
+\contentsline {paragraph}{Part II}{13}{section*.37}%
+\contentsline {paragraph}{Prefix free codes}{13}{section*.38}%
+\contentsline {paragraph}{Average Codeword length}{13}{section*.39}%
+\contentsline {paragraph}{Average codeword length: Lower Bound}{14}{section*.40}%
