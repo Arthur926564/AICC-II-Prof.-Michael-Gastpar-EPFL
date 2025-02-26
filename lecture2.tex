@@ -1,1 +1,86 @@
 \lecture{2}{2025-02-19}{Source and entropy}{}
+
+\begin{parag}{Expected value and operation}
+    The addition works well with Expectation such that
+    \[\E[X + Y] = \E[x] + \E[Y]\]
+    However, the product doesn't work well, \\
+    \[\E[XY] = \E[X]\E[Y]\]
+    \important{if and only if} $X$ and $Y$ are independent random variables.
+    
+\end{parag}
+\section{Entropy}
+\begin{parag}{Introduction}
+    We communicate be revealing the value of sequence of variables that we call (\textbf{Symbols}), \textbf{Information}
+    \\
+    In modern language, Hartley was saying that the value of a symbole provides information if and only if the symbol is a \textbf{random variable}.
+    \\
+    How much information is carried by a symbol such as $S$?
+    \begin{itemize}
+        \item Suppose that  $S \in \mathcal{A}$ is a symbol that can take $|\mathcal{A}|$ possible values
+        \item The amount of information conveyed by $n$ such symbol should be $n$ times the informations conveyed
+        \item there are $|\mathcal{A}|^n$ possible values for $n$ symbols
+        \item This suggests that $\log|\mathcal{A}|^n = n\log |\mathcal{A|}$ is the appropriate mesure for information
+    \end{itemize}
+    However, this approach doesn't works:
+    \begin{subparag}{Example}
+        Imagine having a town where there are $360$ days and $5$ rainy days, this leads to have only to possibilities, $|\mathcal{A}| = 2$ which make the quantity of information $\log_2 2 = 1$ bits. Which intiutively sounds kind of false, the forecast doesn't give us that information knowing that it is sunny $\frac{360}{365}$ \% of the times, it is kind of excpected. 
+    \end{subparag}
+    An article in 1948 from Shannon fixes the problem by defining \textbf{Entropy}
+\end{parag}
+\begin{parag}{Definition}
+    the \textbf{uncertainty} or \textbf{entropy} $H(S)$
+    associated to a discrete random variable $S$:
+    \begin{definition}
+        \[H_b(S) = - \sum_{S \in supp(p_s)}p_s(s)\log_bp_s(s)\]
+        Where sup$p(s) = \{s : p_s(s) > 0\}$.
+    \end{definition}
+\end{parag}
+\begin{parag}{Few comments}
+    \[H_b(S) = - \sum_{S \in supp(p_s)}p_s(s)\log_bp_s(s)\]
+    \begin{itemize}
+        \item The condition $S \in supp(p_s)$ is needed because $\log_bp_s(s)$ is not define when $p_s(s) = 0$ this convention allows us to use the notation : 
+        \[H_b(S) = - \sum_{s \in \mathcal{A}}p_s(\log_bp_s(s))\]
+        \item The choice of $b$ determines the unit, $b= 2$ is the \important{bit}
+    \end{itemize}
+    We also can see this as an "\textit{average}" of $-\log_b p_s(S)$ which is:
+    \[H(S) = \E [-\log_bp_s(S)]\]
+\end{parag}
+
+\begin{parag}{Example}
+    A sequence of $4$ decimal digits, $s_1, s_2, s_3, s_4$ representing the number to open Anne's lock can be senn as the output of a source $S_1, S_2, S_3, S_4$ with $S_i = \{0, \dots, 9\}$.
+    \\
+    If Anne picks all digits at randm and indepedently, the all outcomes are equally likely:
+    \[p_{S_1, S_2, S_3, S_4}(S_1, S_2, S_3, S_4) = \frac{1}{10^4}\]
+    If we search the entropy of this we get:
+    \[H_2(S) = \log_2|\mathcal{A}| = \log_2 10^4 \approx 13.3 \; bits\]
+\end{parag}
+
+\subsection{Information-Theory Inequality}
+\begin{parag}{Lemma (IT-Inequality)}
+    \begin{lemme}
+        For a positive real number $r$, 
+        \[\log_b r \leq (r-1)\log_b(e)\]
+        with equality if and only if $r = 1$
+    \end{lemme}
+    This proof juste using the deriative
+    
+\end{parag}
+\begin{parag}{Entropy Bounds}
+    \begin{theoreme}
+        The entropy of a discrete  random variable $S \in \mathcal{A}$ satisfies:
+        \[0 \leq H_b(S) \leq \log_b|\mathcal{A|}\]
+        With equality on the left if and only if  $p_s(S) = 1$ and on the right if and only if $p_s(S) = \frac{1}{|\mathcal{A}|}$ for all  $s$.
+    \end{theoreme}
+\end{parag}
+\subsection{Random variables and Entropy}
+\begin{parag}{$n$ random variable}
+the formula for entropy can be expanded to any number of random variables. If $X$ and $Y$ are two discrete random variables, with (joint) probability distribution $p_{x, y}$ then:
+\[H(X, Y) = -\sum_{(x, y) \in X \times Y} p_{x, y}(x, y)\log p_{x, y}(x, y)\]
+\end{parag}
+\begin{parag}{1.4 of textbooks}
+    \begin{theoreme}
+        Let $S_1, \dots, S_n$ be discrete random variables. Then
+        \[H(S_1, S_2, \dots, S_n) \leq H(S_1) + H(S_2) + \cdots + H(S_n)\]
+        With equality if and only if $S_1, \dots, S_n$ are indepedent.
+    \end{theoreme}
+\end{parag}
