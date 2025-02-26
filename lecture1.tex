@@ -149,6 +149,20 @@
         \[p_{x_1, \dots, x_n}(x_1, \dots, x_n) = \prod_{i = 1}^n p_{x_i}(x_i) \]
     \end{theoreme}
 \end{parag}
+\begin{parag}{Condition probability}
+    The conditional distrivution of $Y$ given $X$ is the function: 
+    \[p_{x, y}(x|y) = \frac{p_{x, y}(x, y)}{p_x(x)}\]
+\end{parag}
+\begin{parag}{Independent random variables}
+    The folowig statement are equivalent to the statemant that $X$ and $Y$ are two indepedent random variables:
+    \begin{itemize}
+        \item $p_{x, y} = p_xp_y$
+        \item $p_{y|x}(y|x) = p_y(y)$
+        \item $p_{y|x}(y|x) = p_y(y)$ is not a function of $x$
+        \item $p_{x|y}(x|y) = p_x(x)$
+        \item $p_{x|y}(x|y)$ is not a function of $y$
+    \end{itemize}
+\end{parag}
 \begin{resume}
 \begin{itemize}
     \item Random Variable
