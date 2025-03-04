@@ -1,0 +1,279 @@
+\lecture{5}{2025-03-04}{Conditional Entropy}{}
+
+
+\begin{parag}{Key Idea}
+    Pack multiple symbols into " \textit{supersymbols}"
+    \begin{itemize}
+        \item $(S_1, S_2, S_3, \dots, S_n)$
+        \item Now, apply our Main result to such supersymbols
+    \end{itemize}
+
+\end{parag}
+
+\begin{parag}{Our Next Nugget}
+    Understand
+
+    \begin{subparag}{Example}
+        Audio recording:
+        \begin{itemize}
+            \item We can easily anticipate the next image in a video, there
+        \end{itemize}
+    \end{subparag}
+
+\end{parag}
+
+\begin{parag}{KEy(simple) Independent}
+    \begin{definition}
+        The source models a seuquence $S_1, S_2, \dots, S_n$ of $n$ coin flips
+        \\
+        So $S_i \in \mathcal{A} = \{H, T\}$ where $H$ stands for heat, T for tails.
+        \\
+        $p_{S_i}(H) = p_{S_i}(T) = \frac{1}{2}$
+    \end{definition}
+
+    
+
+\end{parag}
+
+\begin{parag}{Not independent}
+    \begin{definition}
+        The source models a sequence $S_1, S_2, \dots, S_n$ of weather conditions.
+        \\
+        So $S_i \in \mathcal{A} = \{S, R\}$, where $S$ stands for sunny and $R$ for rainy\\
+        The weather on the first day is uniformly distributed in $ \mathcal{A}$.
+        \\
+        For all other days, with probability $q = \frac{6}{7}$ the weather is as for the day before
+    \end{definition}
+    
+
+\end{parag}
+
+
+ \begin{parag}{Conditional Probability}
+     Recall how to determine the conditional probability:
+     \begin{align*}
+         p_{X\mid Y}(x \mid y) = \frac{p_{X, Y}(x, y)}{p_Y(y)}
+     \end{align*}
+     It gives the probability of the event knowing that...
+ \end{parag}
+
+ \begin{parag}{Conditional Expectation of $X$ given $Y = y$}
+     \begin{align*}
+         p_{X \mid Y}( \cdot \mid y)
+     \end{align*}
+     is the probability distribution of the alphabet of $X$, juste like $p_x( \cdot)$
+     \begin{definition}
+         The conditional expectation of $X$ given $Y = y$ is defined as:
+         \begin{align*}
+             \mathcal{E}[X \mid Y = y] = \sum_{ x \in \mathcal{X}}
+         \end{align*}
+         
+     \end{definition}
+     
+     
+ 
+ \end{parag}
+
+ 
+ \begin{parag}{Conditional Entropy of $X$ given $Y = y$}
+     $p_{X \mid Y}( \cdot \mid  y)$ is a probability distribution on the alphabet of $X$, juste like $p_X( \cdot)$ Every probability distribution has an entropy associated to it:
+     \begin{itemize}
+         \item $p_x( \cdot) \to H(X)$
+         \item $p_{ X \mid  Y}( \cdot \mid y) \to H(X \mid Y = y)$
+     \end{itemize}
+     \begin{definition}
+         The conditional entropy of $X$ given $Y = y$ is defined as:
+         \begin{align*}
+             H_D ( X \mid Y = y) = - \sum_{x \in \mathcal{X}} p_{X \mid Y}(
+         \end{align*}
+         
+     \end{definition}
+     \begin{subparag}{Example}
+         A faire
+         
+     \end{subparag}
+ 
+ \end{parag}
+ \begin{parag}{Entropy Bounds}
+
+     \begin{theoreme}
+         The conditional entropy of a discrete random variable $X\in \mathcal{X}$ conditioned on $Y = y$ satisfies:
+         \begin{align*}
+             0 \leq H_D(X \mid Y = y) \leq \log_D \mid \mathcal{X} \mid
+         \end{align*}
+     With equality on the left iff $p_{X \mid Y}(x, y) = 1$ for some $x$, and with equality on the right iff $p_{X \mid Y}(x \mid y) = \frac{1}{\mid \mathcal{X}\mid }$
+         
+     \end{theoreme}
+     The proff is identical to our proof of the basic entropy bounds
+ 
+ \end{parag}
+ 
+ \begin{parag}{Example}
+     Question?
+     \\
+     Do we also have the following entropy bound:
+     \begin{align*}
+         H_D(X \mid > = y) \overbrace{ \leq}^{???} H_D(X)?
+     \end{align*}
+     Answer: no.
+
+     \begin{subparag}{Example}
+         (Or " \textit{counterexample}" if better), Juste for ease of calculation, let us set $ \delta = 0$ (but this is not necessary for the example to work). Then, we have:
+         \begin{align*}
+             H_D(X \mid Y = 0) h_D( \epsilon) \text{ and } H_D(X \mid Y= 1) = 0
+         \end{align*}
+         where $h_d( \cdot)$ is the binary entropy function (with $\log_D( \cdot)$). But we have:
+         \begin{align*}
+             
+         \end{align*}
+         
+         
+         
+     \end{subparag}
+     \begin{framedremark}
+         Conditional entropy can either go up or down (if we give the answer the entropy is $0$)
+     \end{framedremark}
+ \end{parag}
+ \begin{parag}{Conditional Entropy of $X$ given $Y$}
+     The most useful and impactful definition is the \textit{average} conditional entropy of $X$ given $Y = y$, averaged over all values of $y$ under the marginal distribution $p_Y(y)$. Formally, we thus define:
+    \begin{definition}
+    The conditional entropy $X$ given $Y$ is defined as:
+    \begin{align*}
+        H_D(X \mid Y) = \sum_{y \in \mathcal{Y}}p_Y(y) \left( - \sum_{x \in \mathcal{X}} p_{X \mid Y}(x \mid y)\log_D p_{X \mid Y} (x \mid y) \right)
+    \end{align*}
+\end{definition}
+
+\begin{subparag}{Example}
+    For the Bit flipper channel, we have;
+    \begin{align*}
+        H_D( X \mid  Y) = p(Y = 0) H_D(X \mid  Y = 0) + p(Y = 1)H_D( X \mid Y = 1)
+    \end{align*}
+    We search now:
+    \begin{align*}
+        H(X \mid  Y) = p(Y \text{ is Head}) H(X Y \text{ is head}) + p( Y \text{ is Tail}) H(X \mid  Y \text{ is tail}) = \frac{1}{2} \cdot 1 + \frac{1}{2} \cdot 0 = \frac{1}{2}
+    \end{align*}
+\end{subparag}
+\end{parag}
+
+\begin{parag}{Conditional Entropy of $X$ given $Y$}
+    \begin{theoreme}
+        The conditional entropy of discrete random variable $X \in \mathcal{X}$ conditioned on $Y$ satisfies:
+        \begin{align*}
+            o \leq H_D(X \mid  Y) \leq \log_D \mid \mathcal{X} \mid
+        \end{align*}
+        With equality on the left iff for every $y$ there exists and $y$ \text{ such that } $p_{X \mid  Y}( x \mid  y) = 1$ and with equality on the right iff $p_{X \mid  Y}(x \mid  y) = \frac{1}{ \mid \mathcal{X} \mid}$ for all $x$ and all $y$.
+    \end{theoreme}
+    This follows directly from our bounds on $H_D(X \mid Y = y)$
+    \begin{framedremark}
+        Having $p_{X \mid  Y}$
+    \end{framedremark}
+    We know that $p(X \mid Y) = \frac{1}{ \mid \mathcal{X} \mid}$  for all $y$.
+    \\
+    \begin{align*}
+        p(x) &= \sum_{y \in \mathcal{Y}}p(y) p(x \mid  y) \\
+        &= \sum_y p(y) \frac{1}{ \mid \mathcal{X} \mid} \\
+        &= \frac{1}{ \mid \mathcal{X} \mid} \cdot \sum_y \overbrace{p(y)}^{=1}
+    \end{align*}
+    
+    
+    
+
+\end{parag}
+
+
+
+
+
+ \begin{parag}{Conditioning Reduces Entropy}
+     The following bound is important and impactful (and also intuitively pleasing!)
+     \begin{theoreme}
+         For any two discrete random variables $X$ and $Y$,
+         \begin{align*}
+             H_D(X \mid Y) \leq H_D(X)
+         \end{align*}
+         with equality iff $X$ and $Y$ are independent random variables
+     \end{theoreme}
+     In words, \important{On average}, the uncertainty about $X$ can only become smaller if we know $Y$.
+     \begin{framedremark}
+         As we have seen, this is not true point-wise: We may have $H_D( X \mid  Y = y) > H_D(X)$ for some values of $y$.
+         \\
+         It works only on average.
+     \end{framedremark}
+     \begin{subparag}{Proof}
+         \begin{align*}
+             H(X \mid  Y) - H(X) &=\\
+                                 &= \sum_yp(y) \left( -\sum_xp(x \mid  y) \log p(x \mid  y) \right) + \sum_x p(x) \log p(x)\\
+                                 &= \sum_{x, y}p(y)p(x \mid y) \log \frac{1}{p(x \mid y)} + \sum_{x, y} p(y \mid x)p(x) \log p(x)\\
+                                 &= \sum_{x, y}p(x, y) \log \frac{p(x)}{p(x \mid y)} \\
+                                 &\leq \sum_{x, y}p(x, y) \left( \frac{p(x)}{p(x \mid  y}- 1 \right) \cdot \log e
+                                 &= \sum_{x, y}p(x, y) \left \frac{p(x)p(y)}{p(x, y)} -1 \right) \cdot \log(e) \\
+                                 &= \sum_{x, y} \left( p(x)p(y) - p(x, y) \right) \log(e)\\
+                                 &= \left( \left( \sum_{y}p(x)p(y) \right) - \left(\sum_x p(x)p(y) \right) \right)
+         \end{align*}
+         
+     \end{subparag}
+     
+ 
+ \end{parag}
+ 
+ 
+ \begin{parag}{Conditional Entropy of $f(x)$}
+     Let $X$ be an arbitrary random variable. Let $f(x)$ be a (deterministic) function of $x$.\\
+     \begin{align*}
+         H(f(x) \mid X) = 0
+     \end{align*}
+\begin{subparag}{Proof}
+    To find this conditional entropy:
+    \\
+    Let $Y = f(x)$
+    \begin{align*}
+       p(y \mid  y) = \begin{cases}
+           1, \; \; \; y = f(x) \\ 0, \; \; \; y \neq f(x)
+       \end{cases} 
+    \end{align*}
+       the probability that $y$ is $f(x)$ is only true if $f(x) = y$.
+       \\
+       This implies that the entropy is equal to $0$:
+       \begin{align*}
+           H(y \mid  x) = 0
+       \end{align*}
+       
+\end{subparag}
+     
+ 
+ \end{parag}
+
+ \begin{parag}{Conditioning reduced Entropy}
+     A generalization of the previous bound is also interest to us:
+     \begin{theoreme}
+         For any three discrete random variables $X, Y$ and $Z$, 
+         \begin{align*}
+             H_D(X \mid  Y, Z) \leq H_D(X \mid  Z)
+         \end{align*}
+         With equality iff $X$ and $Y$ are conditionally independent random variables given $Z$ (that is, if and only if $p(x, y \mid z) = p(x \mid z)p( y \mid z)$ for all $x, y, z$,
+     \end{theoreme}
+     You can see it as make the $Z$ fall which makes it $p(x, y) = p(x)p(y)$
+     \begin{subparag}{Proof}
+      \begin{align*}
+          H_D(X \mid  Y, Z) - H_D(X \mid  Z) &= \mathcal{E} \left[ \log_D \frac{1}{p_{X \mid  Y, Z}(X \mid Y, Z) \right] + \mathcal{E}[\log_D p_{X \mid Z}(X \mid Z) \\
+                                             &= \mathcal{E}\left[\log_D \frac{p_{X \mid Z}(X \mid Z)}{p_{X \mid  Y}(X \mid Y, Z)} \right]
+      \end{align*}
+      
+     \end{subparag}
+ \end{parag}
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

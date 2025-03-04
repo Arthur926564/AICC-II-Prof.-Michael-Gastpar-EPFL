@@ -1,4 +1,4 @@
-\babel@toc {french}{}
+\babel@toc {french}{}\relax 
 \contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.1}%
 \contentsline {section}{\numberline {1.1}About this course}{5}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Cours Grading}{5}{section.1.2}%
@@ -24,30 +24,60 @@
 \contentsline {paragraph}{linearity}{9}{section*.15}%
 \contentsline {paragraph}{Random variable and independecy}{9}{section*.16}%
 \contentsline {paragraph}{Generalization}{9}{section*.17}%
-\contentsline {paragraph}{Ex hat party 1950}{9}{section*.20}%
-\contentsline {paragraph}{Entropy}{9}{section*.21}%
-\contentsline {subsection}{\numberline {1.7.1}Entropy bounds}{10}{subsection.1.7.1}%
-\contentsline {paragraph}{Bound}{10}{section*.22}%
-\contentsline {section}{\numberline {1.8}Source Coding Purpose}{10}{section.1.8}%
-\contentsline {subsection}{\numberline {1.8.1}Setup}{10}{subsection.1.8.1}%
-\contentsline {paragraph}{Setup}{10}{section*.23}%
-\contentsline {paragraph}{Example}{10}{section*.24}%
-\contentsline {paragraph}{Decodability}{10}{section*.25}%
-\contentsline {paragraph}{Prefix Free codes}{10}{section*.26}%
-\contentsline {paragraph}{Code for one random variable}{11}{section*.27}%
-\contentsline {paragraph}{Complete tree of a code}{11}{section*.28}%
-\contentsline {paragraph}{Binary tree}{11}{section*.29}%
-\contentsline {paragraph}{Ternary Tree}{11}{section*.30}%
-\contentsline {paragraph}{With/Without prefix}{11}{section*.31}%
-\contentsline {paragraph}{Decoding tree}{11}{section*.32}%
-\contentsline {subsection}{\numberline {1.8.2}Codeword length}{11}{subsection.1.8.2}%
-\contentsline {subsection}{\numberline {1.8.3}Kraft McMillan}{12}{subsection.1.8.3}%
-\contentsline {paragraph}{Part 1. Necessary condition for the code to be uniquely decodable}{12}{section*.33}%
-\contentsline {paragraph}{Recall Kraft McMillan}{12}{section*.34}%
-\contentsline {paragraph}{Proof of K-MM Part I}{12}{section*.35}%
-\contentsline {subsection}{\numberline {1.8.4}Important Consequence of Kraft McMillan}{13}{subsection.1.8.4}%
-\contentsline {paragraph}{Part I}{13}{section*.36}%
-\contentsline {paragraph}{Part II}{13}{section*.37}%
-\contentsline {paragraph}{Prefix free codes}{13}{section*.38}%
-\contentsline {paragraph}{Average Codeword length}{13}{section*.39}%
-\contentsline {paragraph}{Average codeword length: Lower Bound}{14}{section*.40}%
+\contentsline {paragraph}{Condition probability}{9}{section*.18}%
+\contentsline {paragraph}{Independent random variables}{9}{section*.19}%
+\contentsline {paragraph}{Expected value and operation}{10}{section*.21}%
+\contentsline {section}{\numberline {1.8}Entropy}{10}{section.1.8}%
+\contentsline {paragraph}{Introduction}{10}{section*.22}%
+\contentsline {paragraph}{Definition}{10}{section*.23}%
+\contentsline {paragraph}{Few comments}{10}{section*.24}%
+\contentsline {paragraph}{Example}{11}{section*.25}%
+\contentsline {subsection}{\numberline {1.8.1}Information-Theory Inequality}{11}{subsection.1.8.1}%
+\contentsline {paragraph}{Lemma (IT-Inequality)}{11}{section*.26}%
+\contentsline {paragraph}{Entropy Bounds}{11}{section*.27}%
+\contentsline {subsection}{\numberline {1.8.2}Random variables and Entropy}{11}{subsection.1.8.2}%
+\contentsline {paragraph}{$n$ random variable}{11}{section*.28}%
+\contentsline {paragraph}{1.4 of textbooks}{11}{section*.29}%
+\contentsline {paragraph}{Ex hat party 1950}{12}{section*.31}%
+\contentsline {paragraph}{Entropy}{12}{section*.32}%
+\contentsline {subsection}{\numberline {1.8.3}Entropy bounds}{12}{subsection.1.8.3}%
+\contentsline {paragraph}{Bound}{12}{section*.33}%
+\contentsline {section}{\numberline {1.9}Source Coding Purpose}{12}{section.1.9}%
+\contentsline {subsection}{\numberline {1.9.1}Setup}{12}{subsection.1.9.1}%
+\contentsline {paragraph}{Setup}{12}{section*.34}%
+\contentsline {paragraph}{Example}{12}{section*.35}%
+\contentsline {paragraph}{Decodability}{13}{section*.36}%
+\contentsline {paragraph}{Prefix Free codes}{13}{section*.37}%
+\contentsline {paragraph}{Code for one random variable}{13}{section*.38}%
+\contentsline {paragraph}{Complete tree of a code}{13}{section*.39}%
+\contentsline {paragraph}{Binary tree}{13}{section*.40}%
+\contentsline {paragraph}{Ternary Tree}{13}{section*.41}%
+\contentsline {paragraph}{With/Without prefix}{13}{section*.42}%
+\contentsline {paragraph}{Decoding tree}{13}{section*.43}%
+\contentsline {subsection}{\numberline {1.9.2}Codeword length}{14}{subsection.1.9.2}%
+\contentsline {subsection}{\numberline {1.9.3}Kraft McMillan}{14}{subsection.1.9.3}%
+\contentsline {paragraph}{Part 1. Necessary condition for the code to be uniquely decodable}{14}{section*.44}%
+\contentsline {paragraph}{Recall Kraft McMillan}{14}{section*.45}%
+\contentsline {paragraph}{Proof of K-MM Part I}{14}{section*.46}%
+\contentsline {subsection}{\numberline {1.9.4}Important Consequence of Kraft McMillan}{15}{subsection.1.9.4}%
+\contentsline {paragraph}{Part I}{15}{section*.47}%
+\contentsline {paragraph}{Part II}{15}{section*.48}%
+\contentsline {paragraph}{Prefix free codes}{15}{section*.49}%
+\contentsline {paragraph}{Average Codeword length}{15}{section*.50}%
+\contentsline {paragraph}{Average codeword length: Lower Bound}{16}{section*.51}%
+\contentsline {paragraph}{Key observation}{17}{section*.53}%
+\contentsline {paragraph}{Theorem}{17}{section*.54}%
+\contentsline {paragraph}{Key Idea}{17}{section*.56}%
+\contentsline {paragraph}{Our Next Nugget}{18}{section*.57}%
+\contentsline {paragraph}{KEy(simple) Independent}{18}{section*.58}%
+\contentsline {paragraph}{Not independent}{18}{section*.59}%
+\contentsline {paragraph}{Conditional Probability}{18}{section*.60}%
+\contentsline {paragraph}{Conditional Expectation of $X$ given $Y = y$}{18}{section*.61}%
+\contentsline {paragraph}{Conditional Entropy of $X$ given $Y = y$}{18}{section*.62}%
+\contentsline {paragraph}{Entropy Bounds}{19}{section*.63}%
+\contentsline {paragraph}{Example}{19}{section*.64}%
+\contentsline {paragraph}{Conditional Entropy of $X$ given $Y$}{19}{section*.65}%
+\contentsline {paragraph}{Conditional Entropy of $X$ given $Y$}{20}{section*.66}%
+\contentsline {paragraph}{Conditioning Reduces Entropy}{20}{section*.67}%
+\contentsline {paragraph}{Conditional Entropy of $f(x)$}{21}{section*.68}%
+\contentsline {paragraph}{Conditioning reduced Entropy}{21}{section*.69}%

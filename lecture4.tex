@@ -1,0 +1,46 @@
+\lecture{4}{2025-02-26}{Continue}{}
+
+
+\begin{parag}{Key observation}
+    The right hand side of:
+    \begin{align*}
+        L(S, \Gamma) = \sum_{s \in \mathcal{A}} p(s) l ( \Gamma (s))
+    \end{align*}
+    \begin{align*}
+        H_D(S) = \sum_{s \in \mathcal{A}} p(s) \log_D \frac{1}{p_S(s)}
+    \end{align*}
+    are identical if $l( \Gamma (s))$
+    \begin{itemize}
+        \item Unfortunately $l( \Gamma (s)) = \log_D \frac{1}{p_S(s)}$ is often not possible (not an integer)
+        \item How about choosing
+    \end{itemize}
+    
+    \begin{theoreme}
+        \begin{itemize}
+            \item For every random variable $S \in \mathcal{A}$
+        \end{itemize}
+    \end{theoreme}
+\end{parag}
+
+\begin{parag}{Theorem}
+    
+    \begin{theoreme}
+        The average codeword length of a D-ary Shannon-Fano code for the random variable $S$ fulfils: 
+        \begin{align*}
+            H_D(S) \leq L(S, \Gamma_{SF}) < H_D(S) + 1
+        \end{align*}
+        
+    \end{theoreme}
+   \begin{subparag}{Proof}
+       it suffices to prove the upper bound (we have already proved the lower bound) 
+       \\
+       First suppose that we could use $l_i = -\log p_i$. The average length would be:
+       \begin{align*}
+           L(S, \Gamma) = \sum_i p_i l_i = \sum_i p_i (-\log_D p_i) = H_D(S)
+       \end{align*}
+       Instead we use $l_i = \left\lceil -\log p_i \right \rceil < - \log p_1 + 1 $
+       
+   \end{subparag} 
+
+\end{parag}
+
