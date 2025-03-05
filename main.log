@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.1 (MiKTeX 24.1) (format=lualatex 2025.3.3)  4 MAR 2025 17:15
+This is LuaHBTeX, Version 1.17.1 (MiKTeX 24.1) (format=lualatex 2025.3.3)  5 MAR 2025 15:03
  restricted system commands enabled.
  file:line:error style messages enabled.
 **main.tex
@@ -3214,10 +3214,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 231--232
 Package mdframed Info: mdframed works in twoside mode on input line 258.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 264.
-
-LaTeX Warning: Reference `mdf@pagelabel-40' on page 21 undefined on input line 
-264.
-
 [21]
 ./lecture5.tex:272: Missing delimiter (. inserted).
 <to be read again> 
@@ -3244,20 +3240,131 @@ Acceptable delimiters are characters whose \delcode is
 nonnegative, or you can use `\delimiter <delimiter code>'.
 
 
-Overfull \hbox (82.63477pt too wide) detected at line 272
+Overfull \hbox (83.71765pt too wide) detected at line 272
 []
  []
 
-) [22]
+) (./lecture6.tex
 
-./main.tex:62: LaTeX Error: \begin{parag} on input line 65 ended by \end{docume
+LaTeX Warning: Hyper reference `lecturesummary6' on page 22 undefined on input 
+line 1.
+
+Package mdframed Info: mdframed works in twoside mode on input line 22.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 26.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 27.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 27.
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <9> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 27.
+
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 27.
+
+[22]
+./lecture6.tex:87: Misplaced \noalign.
+<recently read> \noalign 
+         
+l.87         \hline
+                 
+I expect to see \noalign only after the \cr of
+an alignment. Proceed, and I'll ignore this case.
+
+./lecture6.tex:87: You can't use `\hrule' here except with leaders.
+\vline ->\vrule 
+                \@width \arrayrulewidth 
+l.87         \hline
+                 
+To put a horizontal rule in an hbox or an alignment,
+you should use \leaders or \hrulefill (see The TeXbook).
+
+./lecture6.tex:87: Missing number, treated as zero.
+<to be read again> 
+}
+l.87         \hline
+                 
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./lecture6.tex:87: Illegal unit of measure (pt inserted).
+<to be read again> 
+}
+l.87         \hline
+                 
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+[23]
+Overfull \hbox (80.0339pt too wide) detected at line 120
+[]
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 122.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 126.
+Package mdframed Info: mdframed works in twoside mode on input line 145.
+
+Overfull \hbox (15.47601pt too wide) detected at line 149
+[]
+ []
+
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 150.
+./lecture6.tex:160: Undefined control sequence.
+<argument> ... + H(S_{n-1} \mid Z') + H(S_n \mid S_1, \dotsS 
+                                                  _{n-1} 
+l.160     \end{align*}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./lecture6.tex:160: Undefined control sequence.
+<argument> ... + H(S_{n-1} \mid Z') + H(S_n \mid S_1, \dotsS 
+                                                  _{n-1} 
+l.160     \end{align*}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[24]
+Package mdframed Info: mdframed works in twoside mode on input line 176.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 182.
+Package mdframed Info: mdframed works in twoside mode on input line 192.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 196.
+
+Underfull \hbox (badness 10000) in paragraph at lines 197--199
+
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 199.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 204.
+[25]) [26]
+
+./main.tex:63: LaTeX Error: \begin{parag} on input line 65 ended by \end{docume
 nt}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.62 \end{document}
+l.63 \end{document}
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3284,22 +3391,22 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 ### bottom level
 
 Here is how much of LuaTeX's memory you used:
- 66258 strings out of 476497
+ 66362 strings out of 476497
  100000,2373549 words of node,token memory allocated
- 4973 words of node memory still in use:
-   11 hlist, 3 vlist, 2 rule, 4 disc, 2 local_par, 2 math, 134 glue, 8 kern, 3 p
-enalty, 2 margin_kern, 22 glyph, 1188 attribute, 160 glue_spec, 171 attribute_li
+ 5638 words of node memory still in use:
+   10 hlist, 3 vlist, 2 rule, 4 disc, 1 local_par, 2 math, 165 glue, 7 kern, 2 p
+enalty, 1 margin_kern, 19 glyph, 1405 attribute, 160 glue_spec, 202 attribute_li
 st, 2 shape, 2 write, 2 pdf_colorstack nodes
-   avail lists: 1:2,2:14602,3:1874,4:352,5:456,6:103,7:5478,8:68,9:1390,10:17,11
+   avail lists: 1:2,2:14362,3:1875,4:353,5:499,6:105,7:5452,8:69,9:1391,10:20,11
 :264,12:1
- 86487 multiletter control sequences out of 65536+600000
- 110 fonts using 7946255 bytes
- 110i,16n,120p,1951b,1527s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-r
-m.enc}{C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/l
-m/lm-mathit.enc}<//?/c:/users/maintenant prêt/appdata/local/programs/miktex/fon
-ts/opentype/public/lm/lmroman8-regular.otf>{C:/Users/Maintenant Prêt/AppData/Lo
-cal/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/Maintenant Prêt/
+ 86571 multiletter control sequences out of 65536+600000
+ 132 fonts using 9366623 bytes
+ 110i,19n,120p,1951b,1557s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-m
+athsy.enc}{C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/enc/dvi
+ps/lm/lm-rm.enc}{C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/e
+nc/dvips/lm/lm-mathit.enc}<//?/c:/users/maintenant prêt/appdata/local/programs/
+miktex/fonts/opentype/public/lm/lmroman8-regular.otf>{C:/Users/Maintenant Prêt/
 AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}<//?/c:/users/mai
 ntenant prêt/appdata/local/programs/miktex/fonts/opentype/public/lm/lmroman9-it
 alic.otf><//?/c:/users/maintenant prêt/appdata/local/programs/miktex/fonts/open
@@ -3319,18 +3426,21 @@ lm/lmex10.pfb><C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/typ
 e1/public/lm/lmmi10.pfb><C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX
 /fonts/type1/public/lm/lmmi6.pfb><C:/Users/Maintenant Prêt/AppData/Local/Progra
 ms/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Maintenant Prêt/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/lm/lmmib10.pfb><C:/Users/Maintenant Prêt/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Maintena
-nt Prêt/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users
-/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><
-C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lm
-r8.pfb><C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/lm/lmsy10.pfb><C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/
-type1/public/lm/lmsy8.pfb><C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (22 pages, 324192 bytes).
+al/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb><C:/Users/Maintenant Prêt/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmib10.pfb><C:/Users/Maintena
+nt Prêt/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users
+/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb>
+<C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
+mr6.pfb><C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/lm/lmr8.pfb><C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/lm/lmr9.pfb><C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Maintenant Prêt/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/Maintenant Prêt/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Maintenant Prêt/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (26 pages, 356793 bytes).
 
-PDF statistics: 442 PDF objects out of 1000 (max. 8388607)
- 149 named destinations out of 1000 (max. 131072)
+PDF statistics: 483 PDF objects out of 1000 (max. 8388607)
+ 164 named destinations out of 1000 (max. 131072)
  168 words of extra memory for PDF output out of 10000 (max. 100000000)
 

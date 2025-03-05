@@ -1,0 +1,272 @@
+\lecture{6}{2025-03-04}{Conditional Entropy review}{}
+\begin{parag}{Main definitions}
+    We have here two mains definitions:
+    \\
+    The entropy for for a "\textit{case}" of a random variable:
+    \begin{align*}
+        H(X \mid  Y = y) = - \sum_x p(X \mid  y) \log p(X \mid y)
+    \end{align*}
+    And, the conditional entropy on a random variable:
+    \begin{align*}
+        H(X \mid  Y) &= \sum_y p(y) H(X \mid  Y = y) \\
+                     &= - \sum_y \sum_x p(x, y) \log p(x \mid  y)
+    \end{align*}
+    The main thing to understand here is that $H(X \mid  Y)$ is the \textit{Generalization} of the first definition. It is all the possible values of $Y$ together. This is why we sum up all possible value of $y$. The second way to write $H(X \mid  Y)$ is like taking all the possible pairs together and calculating the entropy of each pairs.
+    \\
+    \textbf{Main Result}: The main result behind this is:
+    \begin{align*}
+        0 &\leq H(X \mid  Y = y) \leq \log \mid \mathcal{X} \mid \\
+        0 &\leq H(X \mid Y) \leq \log \mid  \mathcal{X} \mid \\
+    \end{align*}
+    And the inequality:
+    \begin{formule}
+        \begin{align*}
+            H(X \mid  Y) \leq H(X)
+        \end{align*}
+    \end{formule}
+   \begin{subparag}{Conditional entropy of $f(x)$}
+       Let $X$ be an arbitrary random variable.
+       \\
+       Let $f(x)$ be a (deterministic) function of $x$:
+       \begin{align*}
+           H(f(x) \mid  x) = 0
+       \end{align*}
+       For example:
+       \begin{align*}
+           X \in \{0, 1, 2, 3\} \\
+           f(x) = X \mod 2
+       \end{align*}
+       
+       Which is:
+       \begin{align*}
+           f(x) = \begin{cases}
+               0 \text{ if x is even} \\
+               1 \text{ if x is odd}
+           \end{cases}
+       \end{align*}
+      Then,
+      \begin{align*}
+          P(f(x) \mid X) = \begin{cases}
+              0, \text{ if } x = 0, 2 \\
+              1, \text{ if } x = 1, 3
+          \end{cases}
+      \end{align*}
+      If we now compute the entropy for $X = 0$ and $X = 1$ etc...,  we get:
+      \begin{align*}
+          H(f(x) \mid  X = 0) = 0 \\
+         H(f(x) \mid  X = 1) = 0 \\
+         \vdots
+      \end{align*}
+   \end{subparag} 
+\end{parag}
+
+\begin{parag}{Lisa rolls two dice}
+    Lisa rolls two dice and annoucnes the sum $L$ written as a two digit number.
+    \\
+    The alphabet of $L = L_1L_2 = \{02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12\}$ Where the alphabet of $L_1 = \{0, 1\}$ and the alphabet of $L_2 = \{0, 1, 2, \dots, 9\}$.
+    \\
+    We are looking for the probability that $L_2 = 2$ knowing that $L_1 = 1$:
+    \begin{align*}
+        p_{L_2 \mid  L_2}(2 \mid  1)
+    \end{align*}
+    What we are doing here is the joint distribution:
+    \begin{align*}
+        p_{L_2 \mid  L_1}(2 \mid  1) = \frac{P_{L_1, L_2}(1, 2)}{P_{L_1}(1)} = \frac{ \frac{1}{36}}{ \frac{1}{6}} = \frac{1}{6}
+    \end{align*}
+    After running over all possible values for $(i, j)$, we obtain:
+    \begin{center}
+    \begin{tabular}{|c|c|c||c|}
+        $L_2 = j$ $L_1 =i$ & 0 & 1 & $p_{L_2}(j)$ \\
+        \hline 
+        \hline
+        0 & 0 & $\frac{3}{36}$ & $ \frac{3}{36}$ \\
+        1 & 0 & $ \frac{2}{36}$& $ \frac{2}{36}$ \\
+        2 & $ \frac{1}{36}$ & $ \frac{1}{36}$ & $ \frac{2}{36}$ \\
+        $ \vdots$ &$ \vdots$ &$ \vdots$ &$ \vdots$ \\
+        $p_{L_i}(i)$ & $ \frac{5}{6}$ & $ \frac{1}{6}$ & 
+        \hline
+    \end{tabular}
+    \end{center}
+    
+   now you can do the same with conditional probability and then after computing all those value:
+   \begin{align*}
+       H(L_2 \mid  L_1) = \frac{5}{6} \cdot 2.857 + \frac{1}{6} \cdot 1.459 = 2.624 \text{ bits}
+   \end{align*}
+   Now we can observe that:
+   \begin{align*}
+       2.624 = H(L_2 \mid  L_1) \leq H(L_2) = 3.22
+   \end{align*}
+   Which says that on average, knowing something takes out some randomness
+   
+   
+\end{parag}
+
+\begin{parag}{The chain rule for entropy}
+    Recall that the joint entropy of two random variables $X, Y$ is completely naturally defined as:
+    \begin{align*}
+        H_D(X, Y) = - \sum_x \sum_y p_{X, Y}(x, y) \log_Dp_{X, Y}(x, y)
+    \end{align*}
+    Or as seen earlier:
+    \begin{align*}
+        H_D(X, Y) = H_D(X) + H_D(Y)
+    \end{align*}
+    
+    Using the fact the $p_{X, Y}(x, y) = p_X(x)p_{Y \mid  X} ( y \mid  x)$, we can write this as:
+    \begin{align*}
+        H_D(X, Y) &= - \sum_x p_X(x) \left( \sum_Y p_{Y \mid  X}( y \mid  x) \log_D(p_X(x)p_{Y \mid  X}(y \mid  x)) \right) \\
+                  &= - \sum_x p_X(x) \left( \sum_yp_{Y \mid  X}(y \mid  x) (\log_D p_X(x) + \log_Dp_{Y \mid  X}(y \mid x)) \right) \\
+                  &= - \sum_x p_X(x) \left[ \left( \sum_y p_{Y \mid  X} (y \mid x) \log_D p_X(x) \right) + \left( \sum_y p_{Y \mid  X} (y \mid  x) \log_D p_{Y \mid  X}(y \mid  x) \right) \right] \\
+                  &= H(X) + H(Y \mid  X)
+    \end{align*}
+    
+    \begin{theoreme}
+        \begin{align*}
+            H(X, Y) = H(X) + H(Y \mid  X)
+        \end{align*}
+    \end{theoreme}
+    \begin{subparag}{Professor remark}
+        Firstly:
+        \begin{align*}
+            H(Y, X) = H(X, Y)
+        \end{align*}
+        Which is either proved by:
+        \begin{align*}
+            H(Y,X ) &= H(Y) + H(X \mid  Y) \\
+                &= H(X, Y)
+        \end{align*}
+        The relation proved before in words it:
+       \\
+       To find the joint entropy of two random variables, we can first calculate the entropy of one of the two, and then add to it the conditional entropy of the second, given the first.
+    \end{subparag}
+\end{parag}
+
+\begin{parag}{The chain rule entropy}
+
+    \begin{theoreme}
+        Let $S_1, \dots, S_n$ be discrete random variables. Then:
+        \begin{align*}
+            H_D(S_1, S_2, \dots, S_n) = H_D(S_1) + H_D(S_2 \mid S_1) + \cdots + H_D(S_n \mid S_1, \dots, S_{n-1})
+        \end{align*}
+    \end{theoreme}
+
+    The above result says that the uncertainty of a collection of random variables (in any order) is the uncertainty of the first, plus the uncertainty of the second when the first is known, plus the uncertainty of the third when the first two are know, etc$ \dots$
+    \\
+    Let us see how:
+    \begin{align*}
+       &H(\underbrace{S_1, S_2, \dots, S_{n-1}}_{=  Z}, S_n) \\
+        &= H(Z) + H(S_n \mid Z)  \\
+        &= H( \underbrace{S_1, S_2, \dots, S_{n-2}}_{= Z'}, S_{n-1}) + H(S_n \mid S_1 \dots, S_{n-1}) \\
+        &= H(Z') + H(S_{n-1} \mid Z') + H(S_n \mid S_1, \dotsS_{n-1}
+    \end{align*}
+    Until we get $Z^{' \cdots'} = S_1$.
+    
+    \begin{subparag}{Example}
+        Let $X, Y, Z$ be discrete random variables. We have:
+        \begin{align*}
+            H(X, Y, Z) &= H(X) + H(Y \mid X) + H(Z \mid  X, Y) \\
+&= H(X) + H(Z \mid X) + H(Y \mid  X, Z) \\
+&= H(Y) + H(X \mid Y) + H(Z \mid  X, Y) \\
+&= H(Y) + H(Z \mid Y) + H(X \mid  Y, Z) \\
+&= H(Z) + H(X \mid Z) + H(Y \mid  X, Z) \\
+&= H(Z) + H(Y \mid Z) + H(X \mid  Y, Z) 
+        \end{align*}
+        
+        
+    \end{subparag}
+    \begin{theoreme}
+        Let $S_1, \dots, S_n$ be discrete random variables. Then:
+        \begin{align*}
+            H(S_1, S_2, \dots, S_n) \leq H(S_1) + H(S_2) + \cdots  + H(S_n)
+        \end{align*}
+        With equality iff, $S_1, \dots, S_n$ are independent
+    \end{theoreme}
+   \begin{subparag}{Proof}
+        \begin{align*}
+       H(S_1, S_2, S_3) &= H(S_1) + H(S_2 \mid  S_1) + H(S_3 \mid  S_1, S_2) \\
+                         &\leq H(S_1) + H(S_2) + H(S_3)
+   \end{align*}
+   \end{subparag}
+\end{parag}
+\begin{parag}{Another way around}
+    Sometimes it is convenient to compute the conditional entropy using the chain rule for entropies. For instance:
+    \begin{formule}
+        \begin{align*}
+            H(X \mid  Y) = H(X, Y) - H(Y)
+        \end{align*}
+    \end{formule}
+    It can be useful to make it easier to compute $H( X \mid  Y)$ because on the right side, it is only marginal entropies with $p \log p$ which are  \textit{"easy to compute}"
+    \\
+    \begin{corollaire}
+        \begin{align*}
+            H(X, Y) \geq H(X) \\
+            H(X, Y) \geq H(Y)
+        \end{align*}
+    \end{corollaire}
+    The above inequalities follow from the chain rule for entropies and the fact that entropy (condition or not) is nonnegative.
+    
+\end{parag}
+
+\begin{parag}{Example}
+    From lisa rolls two dice:
+    \begin{align*}
+        H(L_1, L_2) &= 3.2744 \\
+        H(L_1) &= 0.6500 \\
+        H(L_2) &= 3.2188
+    \end{align*}
+    We compute:
+    \begin{align*}
+        H(L_2 \mid  L_1) &= H(L_1, L_2) - H(L_1) = 3.2744 - 0.6500 = 2.6254 \\
+        H(L_1 \mid  L_2) &= H(L_1, L_2) _ H(L_2) = 3.2744 - 3.2188 = 0.056
+    \end{align*}
+    And verify that indeed:
+    \begin{align*}
+        H(L_1 \mid  L_2) \leq H(L-1) \leq H(L_1, L_2) \\
+        H(L_2 \mid  L_1) \leq H(L_2) \leq H(L_1, L_2)
+    \end{align*}
+    
+    
+    
+
+\end{parag}
+
+
+\subsection{Random Processes}
+\begin{parag}{A.K.A Source models}
+    \begin{definition}
+        The source models a sequence $S_1, S_2, \dots, S_n$ of $n$ coin flips\\
+        So $S_i \in \mathcal{A} = \{H, T\}$, where $H$ stands for heads, $T$ for tails, $i = 1, 2, \dots, n$ \\
+        $p_{S_i}(H) = p_{S_i}(T) = \frac{1}{2}$ for all $i$, and coin flips are independent.\\
+     Hence,
+     \begin{align*}
+         p_{S_1, S_2, \dots, S_n}(S_1, S_2, \dots, S_n) = \frac{1}{2^n}, \; \; \forall (S_1, S_2, \dots, S_n) \in \mathcal{A}^n
+     \end{align*}
+     
+    \end{definition}
+\begin{definition}
+    The source models a sequence $S_1, S_2, \dots, S_n$ of weather conditions.
+    \\
+    So $S_i \in \mathcal{A} = \{S, R\}$, where $S$ stands for sunny and $R$ for rainy, $i = 1, 2, \dots, n$. \\
+    The weather on the first day is uniformly distributed in $ \mathcal{A}$. \\
+    For all other days, with probability $q = \frac{6}{7}$ the weather is as for the day before
+\end{definition}
+What we can see here that is the conditional probability, for example:
+\begin{align*}
+    p(S_2 = \text{ sun} \mid S_1 = \text{ sun}) = q \\
+    p(S_2 = \text{ rain} \mid  S_1 = \text{ sun}) = 1 - q
+\end{align*} 
+However:
+\begin{align*}
+   p(S_3 = \text{sun} \mid S_1 = \text{sun}, S_2 = \text{sun})\\
+   = p(S_3 = \text{ sun} \mid S_2 = \text{ sun}) = q
+\end{align*}
+More generally:
+\begin{align*}
+    P(S_n \mid  S_1, S_2, \dots, S_{n-1}) = p(S_n \mid  S_{n-1})
+\end{align*}
+
+
+    
+
+\end{parag}
+
+
