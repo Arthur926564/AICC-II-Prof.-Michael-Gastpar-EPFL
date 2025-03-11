@@ -87,3 +87,15 @@
 \contentsline {paragraph}{The chain rule entropy}{24}{section*.74}%
 \contentsline {paragraph}{Another way around}{25}{section*.75}%
 \contentsline {paragraph}{Example}{25}{section*.76}%
+\contentsline {subsection}{\numberline {1.9.5}Random Processes}{26}{subsection.1.9.5}%
+\contentsline {paragraph}{A.K.A Source models}{26}{section*.77}%
+\contentsline {paragraph}{Experience little play}{27}{section*.79}%
+\contentsline {paragraph}{Last Week}{27}{section*.80}%
+\contentsline {paragraph}{The 20 question problem}{27}{section*.81}%
+\contentsline {paragraph}{Solution}{27}{section*.82}%
+\contentsline {paragraph}{Optimality}{28}{section*.83}%
+\contentsline {paragraph}{Sorting via pairwise comparisons}{29}{section*.84}%
+\contentsline {paragraph}{Billard Balls}{30}{section*.85}%
+\contentsline {paragraph}{Fact 1}{31}{section*.86}%
+\contentsline {paragraph}{Fact 2}{32}{section*.87}%
+\contentsline {paragraph}{Example}{32}{section*.88}%
