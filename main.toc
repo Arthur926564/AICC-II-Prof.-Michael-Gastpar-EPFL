@@ -1,4 +1,4 @@
-\babel@toc {french}{}\relax 
+\babel@toc {english}{}\relax 
 \contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.1}%
 \contentsline {section}{\numberline {1.1}About this course}{5}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Cours Grading}{5}{section.1.2}%
@@ -114,3 +114,14 @@
 \contentsline {paragraph}{Models}{37}{section*.99}%
 \contentsline {paragraph}{Entropy and algorithm}{38}{section*.100}%
 \contentsline {paragraph}{Cross-Entropy Loss}{38}{section*.101}%
+\contentsline {chapter}{\numberline {3}Cryptography}{39}{chapter.3}%
+\contentsline {section}{\numberline {3.1}One-Time pad, Perfect Secrecy, Public-Key}{39}{section.3.1}%
+\contentsline {paragraph}{Why cryptography}{39}{section*.103}%
+\contentsline {paragraph}{Basic setup for condidentiality}{39}{section*.104}%
+\contentsline {paragraph}{Basic Terminology}{39}{section*.105}%
+\contentsline {paragraph}{Ancient cryptography}{39}{section*.106}%
+\contentsline {paragraph}{The one-time pad}{40}{section*.107}%
+\contentsline {paragraph}{Perfect secrecy}{41}{section*.108}%
+\contentsline {paragraph}{Perfect secrecy of the one time pad}{41}{section*.109}%
+\contentsline {paragraph}{Weakness of the one time pad}{41}{section*.110}%
+\contentsline {paragraph}{Perfect secrecy requires high entropy keys}{42}{section*.111}%

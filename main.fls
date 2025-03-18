@@ -98,21 +98,12 @@ INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\generic\babel\
 INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\generic\babel\luababel.def
 INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\arabi\bblopts.cfg
 INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\arabi\bblopts.cfg
-INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\generic\babel-french\french.ldf
-INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\generic\babel-french\french.ldf
-INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\generic\babel-french\frenchb.lua
-INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\generic\hyph-utf8\loadhyph\loadhyph-fr.tex
-INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\generic\hyph-utf8\loadhyph\loadhyph-fr.tex
-INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\generic\hyph-utf8\patterns\tex\hyph-fr.tex
-INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\generic\hyph-utf8\patterns\tex\hyph-fr.tex
-INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\generic\hyph-utf8\patterns\quote\hyph-quote-fr.tex
-INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\generic\hyph-utf8\patterns\quote\hyph-quote-fr.tex
-INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\generic\babel\locale\fr\babel-french.tex
-INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\generic\babel\locale\fr\babel-french.tex
-INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\generic\babel\locale\fr\babel-fr.ini
-INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\generic\babel\locale\fr\babel-fr.ini
-INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\carlisle\scalefnt.sty
-INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\carlisle\scalefnt.sty
+INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\babel-english\english.ldf
+INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\babel-english\english.ldf
+INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\generic\babel\locale\en\babel-english.tex
+INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\generic\babel\locale\en\babel-english.tex
+INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\generic\babel\locale\en\babel-en.ini
+INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\generic\babel\locale\en\babel-en.ini
 INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\base\fontenc.sty
 INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\base\fontenc.sty
 INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmr.fd
@@ -737,12 +728,10 @@ INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\tracklan
 INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\tracklang\tracklang.sty
 INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\generic\tracklang\tracklang.tex
 INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\generic\tracklang\tracklang.tex
-INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\datetime2-french\datetime2-french.ldf
-INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\datetime2-french\datetime2-french.ldf
-INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\generic\iftex\ifxetex.sty
-INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\generic\iftex\ifxetex.sty
-INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\datetime2-french\datetime2-french-utf8.ldf
-INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\datetime2-french\datetime2-french-utf8.ldf
+INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\datetime2-english\datetime2-english.ldf
+INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\datetime2-english\datetime2-english.ldf
+INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\datetime2-english\datetime2-english-base.ldf
+INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\datetime2-english\datetime2-english-base.ldf
 INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\datetime2\datetime2-calc.sty
 INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\datetime2\datetime2-calc.sty
 INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\pgf\utilities\pgfcalendar.sty
@@ -878,8 +867,8 @@ INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf
 INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
 INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
-INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\translations\dicts\translations-basic-dictionary-french.trsl
-INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\translations\dicts\translations-basic-dictionary-french.trsl
+INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\translations\dicts\translations-basic-dictionary-english.trsl
+INPUT C:\Users\Maintenant Prêt\AppData\Local\Programs\MiKTeX\tex\latex\translations\dicts\translations-basic-dictionary-english.trsl
 INPUT C:\Users\Maintenant Prêt\AppData\Local\MiKTeX\luatex-cache\generic\names\luaotfload-lookup-cache.luc
 OUTPUT C:\Users\Maintenant Prêt\AppData\Local\MiKTeX\luatex-cache\generic\names\luaotfload-lookup-cache.lua
 OUTPUT C:\Users\Maintenant Prêt\AppData\Local\MiKTeX\luatex-cache\generic\names\luaotfload-lookup-cache.luc
@@ -1106,6 +1095,13 @@ INPUT .\12025-03-12.png
 INPUT .\12025-03-12.png
 INPUT .\12025-03-12.png
 INPUT .\12025-03-12.png
+INPUT .\lecture9.tex
+INPUT .\lecture9.tex
+INPUT .\12025-03-18.png
+INPUT .\12025-03-18.png
+INPUT .\12025-03-18.png
+INPUT .\12025-03-18.png
+INPUT .\12025-03-18.png
 INPUT .\main.aux
 INPUT .\main.aux
 INPUT .\main.out
