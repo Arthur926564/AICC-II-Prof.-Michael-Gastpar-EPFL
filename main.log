@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.21.0 (MiKTeX 25.2) (format=lualatex 2025.3.6)  18 MAR 2025 15:47
+This is LuaHBTeX, Version 1.21.0 (MiKTeX 25.2) (format=lualatex 2025.3.6)  20 MAR 2025 08:20
  restricted system commands enabled.
  file:line:error style messages enabled.
 **main.tex
@@ -3442,7 +3442,7 @@ l.84 ...    \includegraphics[0.7]{12025-03-11.png}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<12025-03-11.png, id=409, 390.258pt x 142.131pt>
+<12025-03-11.png, id=411, 390.258pt x 142.131pt>
 File: 12025-03-11.png Graphic file (type png)
 <use 12025-03-11.png>
 Package luatex.def Info: 12025-03-11.png  used on input line 84.
@@ -3455,7 +3455,7 @@ Overfull \hbox (26.34634pt too wide) in paragraph at lines 84--85
 
 
 [29<./12025-03-11.png>]
-<22025-03-11.png, id=418, 365.56575pt x 249.93375pt>
+<22025-03-11.png, id=420, 365.56575pt x 249.93375pt>
 File: 22025-03-11.png Graphic file (type png)
 <use 22025-03-11.png>
 Package luatex.def Info: 22025-03-11.png  used on input line 118.
@@ -3468,7 +3468,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 128--134
 
 
 [30<./22025-03-11.png>]
-<32025-03-11.png, id=427, 425.79076pt x 37.94176pt>
+<32025-03-11.png, id=429, 425.79076pt x 37.94176pt>
 File: 32025-03-11.png Graphic file (type png)
 <use 32025-03-11.png>
 Package luatex.def Info: 32025-03-11.png  used on input line 155.
@@ -3524,7 +3524,7 @@ Overfull \hbox (20.42491pt too wide) detected at line 266
 []
  []
 
-<52025-03-11.png, id=445, 507.69675pt x 363.15675pt>
+<52025-03-11.png, id=447, 507.69675pt x 363.15675pt>
 File: 52025-03-11.png Graphic file (type png)
 <use 52025-03-11.png>
 Package luatex.def Info: 52025-03-11.png  used on input line 279.
@@ -3566,7 +3566,7 @@ or  <return>  to continue without it.
 
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 22.
-<12025-03-12.png, id=453, 425.79076pt x 301.72725pt>
+<12025-03-12.png, id=455, 425.79076pt x 301.72725pt>
 File: 12025-03-12.png Graphic file (type png)
 <use 12025-03-12.png>
 Package luatex.def Info: 12025-03-12.png  used on input line 28.
@@ -3746,7 +3746,7 @@ line 1.
 
 [38]
 Chapter 3.
-<12025-03-18.png, id=489, 476.37975pt x 184.89075pt>
+<12025-03-18.png, id=491, 476.37975pt x 184.89075pt>
 File: 12025-03-18.png Graphic file (type png)
 <use 12025-03-18.png>
 Package luatex.def Info: 12025-03-18.png  used on input line 17.
@@ -3767,49 +3767,140 @@ Package mdframed Info: mdframed inside a box
 Package mdframed Info: mdframed works in twoside mode on input line 155.
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 161.
-Package mdframed Info: mdframed works in twoside mode on input line 172.
+Package mdframed Info: mdframed works in twoside mode on input line 190.
 
 
-./lecture9.tex:172: LaTeX Error: Environment remark undefined.
+./lecture9.tex:190: LaTeX Error: Environment remark undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.172    \begin{framedremark}
+l.190    \begin{framedremark}
                              
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./lecture9.tex:174: LaTeX Error: \begin{mdframed} on input line 172 ended by \e
+./lecture9.tex:192: LaTeX Error: \begin{mdframed} on input line 190 ended by \e
 nd{remark}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.174    \end{framedremark}
+l.192    \end{framedremark}
                            
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 Package mdframed Info: mdframed inside a box 
- mdframed uses option nobreak mdframed on input line 174.
-)
+ mdframed uses option nobreak mdframed on input line 192.
 
-[42]
 
-./main.tex:66: LaTeX Error: \begin{parag} on input line 65 ended by \end{docume
+[42]) (./lecture10.tex
+
+LaTeX Warning: Hyper reference `lecturesummary10' on page 43 undefined on input
+ line 1.
+
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: TU).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+Underfull \hbox (badness 1502) in paragraph at lines 37--38
+[]\TU/lmr/m/n/10.95 You pick a num-ber $\OML/lmm/m/it/10.95 p \OT1/lmr/m/n/10.9
+5 = 7$ \TU/lmr/m/n/10.95 which is a prime $\OMS/lmsy/m/n/10.95 A \OT1/lmr/m/n/1
+0.95 =
+ []
+
+<12025-03-19.png, id=522, 531.1845pt x 377.61075pt>
+File: 12025-03-19.png Graphic file (type png)
+<use 12025-03-19.png>
+Package luatex.def Info: 12025-03-19.png  used on input line 56.
+(luatex.def)             Requested size: 212.47002pt x 151.04161pt.
+
+
+[43]
+Package mdframed Info: mdframed works in twoside mode on input line 75.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 81.
+
+
+[44<./12025-03-19.png>]
+<22025-03-19.png, id=538, 265.59225pt x 107.80275pt>
+File: 22025-03-19.png Graphic file (type png)
+<use 22025-03-19.png>
+Package luatex.def Info: 22025-03-19.png  used on input line 140.
+(luatex.def)             Requested size: 212.47408pt x 86.2423pt.
+
+
+[45]
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
+
+ []
+
+<32025-03-19.png, id=547, 376.40625pt x 61.4295pt>
+File: 32025-03-19.png Graphic file (type png)
+<use 32025-03-19.png>
+Package luatex.def Info: 32025-03-19.png  used on input line 152.
+(luatex.def)             Requested size: 188.20265pt x 30.71466pt.
+<42025-03-19.png, id=548, 636.57825pt x 439.6425pt>
+File: 42025-03-19.png Graphic file (type png)
+<use 42025-03-19.png>
+Package luatex.def Info: 42025-03-19.png  used on input line 171.
+(luatex.def)             Requested size: 318.28835pt x 219.82071pt.
+
+Overfull \hbox (25.50952pt too wide) in paragraph at lines 171--172
+ [] 
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 174.
+
+./lecture10.tex:174: LaTeX Error: Environment remark undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.174     \begin{framedremark}
+                              
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./lecture10.tex:176: LaTeX Error: \begin{mdframed} on input line 174 ended by \
+end{remark}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.176     \end{framedremark}
+                            
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 176.
+
+
+[46<./22025-03-19.png><./32025-03-19.png>])
+
+[47<./42025-03-19.png>]
+
+./main.tex:67: LaTeX Error: \begin{parag} on input line 65 ended by \end{docume
 nt}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.66 \end{document}
+l.67 \end{document}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -3836,57 +3927,59 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 ### bottom level
 
 Here is how much of LuaTeX's memory you used:
- 65745 strings out of 475506
+ 65876 strings out of 475506
  100000,2373549 words of node,token memory allocated
- 1814 words of node memory still in use:
+ 1797 words of node memory still in use:
    11 hlist, 3 vlist, 2 rule, 3 disc, 2 local_par, 2 math, 8 glue, 7 kern, 2 pen
-alty, 2 margin_kern, 20 glyph, 157 attribute, 160 glue_spec, 80 attribute_list, 
+alty, 1 margin_kern, 19 glyph, 155 attribute, 160 glue_spec, 79 attribute_list, 
 2 shape, 2 write, 2 pdf_colorstack nodes
-   avail lists: 2:5287,3:1824,4:339,5:540,6:105,7:6160,8:75,9:1378,10:19,11:341,
+   avail lists: 2:5290,3:1824,4:340,5:547,6:105,7:6545,8:75,9:1378,10:19,11:381,
 12:1
- 86848 multiletter control sequences out of 65536+600000
- 135 fonts using 9761687 bytes
- 110i,19n,120p,1951b,1617s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-m
-athsy.enc}{C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/enc/dvi
-ps/lm/lm-rm.enc}{C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/e
-nc/dvips/lm/lm-mathit.enc}<c:/users/maintenant prêt/appdata/local/programs/mikt
-ex/fonts/opentype/public/lm/lmroman8-regular.otf>{C:/Users/Maintenant Prêt/AppD
-ata/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}<c:/users/maintenant 
-prêt/appdata/local/programs/miktex/fonts/opentype/public/lm/lmroman9-italic.otf
-><c:/users/maintenant prêt/appdata/local/programs/miktex/fonts/opentype/public/
-lm/lmroman10-italic.otf><c:/users/maintenant prêt/appdata/local/programs/miktex
-/fonts/opentype/public/lm/lmroman10-bolditalic.otf><c:/users/maintenant prêt/ap
-pdata/local/programs/miktex/fonts/opentype/public/lm/lmromanslant10-regular.otf>
-<//?/c:/users/maintenant prêt/appdata/local/programs/miktex/fonts/opentype/publ
-ic/lm/lmroman10-regular.otf><//?/c:/users/maintenant prêt/appdata/local/program
-s/miktex/fonts/opentype/public/lm/lmroman10-bold.otf><//?/c:/users/maintenant pr
-êt/appdata/local/programs/miktex/fonts/opentype/public/lm/lmroman12-bold.otf></
+ 86951 multiletter control sequences out of 65536+600000
+ 136 fonts using 9887839 bytes
+ 110i,19n,120p,1951b,1628s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/users/maintenant prêt/appdata/local/programs/miktex/fonts/opentype/public/l
+m/lmmono10-regular.otf>{C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX/
+fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/Maintenant Prêt/AppData/Local/Progra
+ms/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/Maintenant Prêt/AppData/Local/
+Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}<c:/users/maintenant prêt/appd
+ata/local/programs/miktex/fonts/opentype/public/lm/lmroman8-regular.otf>{C:/User
+s/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.en
+c}<c:/users/maintenant prêt/appdata/local/programs/miktex/fonts/opentype/public
+/lm/lmroman9-italic.otf><c:/users/maintenant prêt/appdata/local/programs/miktex
+/fonts/opentype/public/lm/lmroman10-italic.otf><c:/users/maintenant prêt/appdat
+a/local/programs/miktex/fonts/opentype/public/lm/lmroman10-bolditalic.otf><c:/us
+ers/maintenant prêt/appdata/local/programs/miktex/fonts/opentype/public/lm/lmro
+manslant10-regular.otf><//?/c:/users/maintenant prêt/appdata/local/programs/mik
+tex/fonts/opentype/public/lm/lmroman10-regular.otf><//?/c:/users/maintenant pr
+êt/appdata/local/programs/miktex/fonts/opentype/public/lm/lmroman10-bold.otf></
 /?/c:/users/maintenant prêt/appdata/local/programs/miktex/fonts/opentype/public
-/lm/lmroman12-regular.otf><//?/c:/users/maintenant prêt/appdata/local/programs/
-miktex/fonts/opentype/public/lm/lmroman17-regular.otf><C:/Users/Maintenant Pr
-êt/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbsy10.pfb><C:/Users/Ma
-intenant Prêt/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C
-:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lme
-x10.pfb><C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/lm/lmmi10.pfb><C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/lm/lmmi6.pfb><C:/Users/Maintenant Prêt/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Maintenant Prêt/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/lm/lmmi9.pfb><C:/Users/Maintenant Prêt/AppData/
-Local/Programs/MiKTeX/fonts/type1/public/lm/lmmib10.pfb><C:/Users/Maintenant Pr
-êt/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Main
-tenant Prêt/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/U
-sers/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.p
-fb><C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
-m/lmr8.pfb><C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/type1/
-public/lm/lmr9.pfb><C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX/font
-s/type1/public/lm/lmsy10.pfb><C:/Users/Maintenant Prêt/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/Maintenant Prêt/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Maintenant Prêt/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (42 pages, 952426 bytes).
+/lm/lmroman12-bold.otf><//?/c:/users/maintenant prêt/appdata/local/programs/mik
+tex/fonts/opentype/public/lm/lmroman12-regular.otf><//?/c:/users/maintenant pr
+êt/appdata/local/programs/miktex/fonts/opentype/public/lm/lmroman17-regular.otf
+><C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
+lmbsy10.pfb><C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/lm/lmbx10.pfb><C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/lm/lmex10.pfb><C:/Users/Maintenant Prêt/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Maintenant Prêt/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/Maintenant Prêt/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Maintenant
+ Prêt/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb><C:/Users/M
+aintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmib10.pfb>
+<C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
+mr10.pfb><C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/lm/lmr12.pfb><C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/lm/lmr6.pfb><C:/Users/Maintenant Prêt/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Maintenant Prêt/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/Maintenant Prêt/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Maintenant Prêt/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/Maintenan
+t Prêt/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/
+Maintenant Prêt/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbo
+ls/msbm10.pfb>
+Output written on main.pdf (47 pages, 1094624 bytes).
 
-PDF statistics: 647 PDF objects out of 1000 (max. 8388607)
- 233 named destinations out of 1000 (max. 131072)
+PDF statistics: 695 PDF objects out of 1000 (max. 8388607)
+ 248 named destinations out of 1000 (max. 131072)
  216 words of extra memory for PDF output out of 10000 (max. 100000000)
 

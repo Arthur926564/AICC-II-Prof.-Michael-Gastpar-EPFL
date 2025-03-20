@@ -143,7 +143,7 @@
     The following theorem makes no assumption on the encryption algorithm:
     \begin{center}
         \begin{tikzpicture}
-            \draw[](0, 0) rectangle(2, 3);
+            \draw[](0, 0) rectangle(2, 3) node at (0.5, 1.5){encryption};
         \draw[<-](2, 2) -- (2.5, 2) node at (2.75, 2) {$t$};
         \draw[->](2, 0.5) -- (2.5, 0.5) node at (2.75, 0.5){$c$};
         \draw[->](-0.5, 1.5) -- (-0, 1.5) node at(-0.75, 1.5){$k$};
@@ -165,9 +165,27 @@
            H(T) &= H(T \mid  C)\\
                 &\leq H(T, K \mid C)\\
                 &= H(K \mid  C) + H(T \mid  K, C)\\
-                H(K \mid  C)\\
+                 &= H(K \mid  C)\\
                 &\leq H(K)
        \end{align*}
+       Given  $T, K, C$ we search for the entropy:
+       \begin{align*}
+           H(t, k, c) &= H(c) + \overbrace{H(t \mid  c)}^{=H(t)} + H(k \mid  t, c) \\
+                      &= H(c) + H(k \mid  c) + \underbrace{H(t \mid  k, c)}_{= 0} \\
+                      &\implies H(t) + H(k, \mid  t, c) \leq h(k \mid  c)
+       \end{align*}
+This implies:
+\begin{align*}
+    H(t) + \underbrace{H(k \mid t, c)}_{ \geq 0} \leq H(k)
+\end{align*}
+Because if we take out the \textit{"Knowing c"} we cannot have some bigger. 
+Therefore:
+\begin{align*}
+    H(t) \leq H(k)
+\end{align*}
+
+
+
    \end{subparag}
    \begin{framedremark}
        Entropy plays a key role also in cryptography

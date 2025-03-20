@@ -125,3 +125,11 @@
 \contentsline {paragraph}{Perfect secrecy of the one time pad}{41}{section*.109}%
 \contentsline {paragraph}{Weakness of the one time pad}{41}{section*.110}%
 \contentsline {paragraph}{Perfect secrecy requires high entropy keys}{42}{section*.111}%
+\contentsline {paragraph}{Exercice}{43}{section*.113}%
+\contentsline {paragraph}{Symettric-Key crypto Systems: key-distribution problem}{43}{section*.114}%
+\contentsline {paragraph}{Solution}{43}{section*.115}%
+\contentsline {paragraph}{Paradigm shift}{45}{section*.116}%
+\contentsline {paragraph}{One way function}{45}{section*.117}%
+\contentsline {paragraph}{Trapdoor One-way function}{45}{section*.118}%
+\contentsline {paragraph}{Asymetric cryptography}{45}{section*.119}%
+\contentsline {paragraph}{ElGammal's trapdoor one way function}{46}{section*.120}%
