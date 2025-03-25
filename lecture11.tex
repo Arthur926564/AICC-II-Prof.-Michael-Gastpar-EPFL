@@ -1,0 +1,131 @@
+\lecture{11}{2025-03-25}{Number Theory}{}
+    \section{Number theory}
+    \begin{parag}{Introduction}
+        In the digital world, the information is represented by the elements of a finite set, and we should be able to do math with them. Which means that the finite set should be a finite field. Our bigger goal of the next few lectures is to develop the tools to understand when and how we can turn a finite set into a finite field.
+    \end{parag}
+    
+    \begin{parag}{Operation with integers}
+        Within $ \mathbb{Z}$ (the set of integers) we can
+        \begin{itemize}
+            \item add, subtract, multiply
+            \item but not divide $ \frac{7}{2}$ is not an integer
+            \item What comes closest to the (regular) division is the euclidean division
+        \end{itemize}
+    \end{parag}
+    
+    \begin{parag}{Euclidiean division}
+        \begin{subparag}{The division algorithm}
+            Given integers a (the dividend) and $m$ the divisor:
+            \begin{align*}
+                a = mq + r, \; \; 0 \leq r < \mid m \mid
+            \end{align*}
+            \begin{framedremark}
+                The computation of $q$ and $r$ as above is called euclidean division
+            \end{framedremark}
+        \end{subparag}
+     
+        \begin{subparag}{euclidean division in mainstream programming languages}
+            In  C/C++/Java/ Python we use the operator \% to compute $r$ as follows:\\
+            if $a$ and $m$ are both positive, then $r = \% m$\\
+            If one or the other or both are negative, different languages behave differently, but the general rule is:
+            \begin{itemize}
+                \item if $ a \% m$ is nonnegative, then $r  = a \% m$
+                \item if $ a \% m$ is \important{negative}, then $r = a \% m + m$
+            \end{itemize}
+
+            
+        \end{subparag}
+    \end{parag}
+    
+    \begin{parag}{Congruence is an equivalence relation}
+        A binary relation $ \sim$ on a set is an \important{equivalence relation} if and only if the following three axioms are satisfied:
+        \begin{itemize}
+            \item $a \sim a$ (reflexivity)
+            \item if $ a \sim b$ then $ b \sim a$ (symmetry)
+            \item if $ a \sim b$ and $b \sim c$ then $ a \sim c$ (transitivity)
+        \end{itemize}
+        Substriture $a \sim a$ with $ a \equiv a \mod m$ etc...,  to see that congruene is an equivalence relation\\
+        One of the consequences is that we can form equivalence classes and we can work with one representative of each class (this will become useful later.)
+    
+    \end{parag}
+    
+    \begin{parag}{Modulo}
+        \begin{theoreme}
+            If:
+            \begin{align*}
+                a \equiv a' \mod m\\
+                b \equiv b' \mod m 
+            \end{align*}
+            then:
+            \begin{align*}
+                a + b \equiv a' + b' \mod m\\
+                ab \eqiuv a'b' \mod m\\
+                a^n \equiv (a')^n \mod m
+            \end{align*}
+        \end{theoreme}
+        In particular, if $a' = ( a \mod m)$ and $b' = b \mod m)$, then we obtain the following facts (useful is mon calculation):
+        \begin{itemize}
+            \item $(a + b) \equiv ((a \mod m) + (b \mod m)) \mod m$
+            \item Hence:
+                \begin{align*}
+                    a + b \mod = (a \mod m) + (b \mod m)) \mod m
+                \end{align*}
+            \item $ab \equiv ((a \mod m) (b \mod m) \mod m$
+            \item \begin{align*}
+                ab \mod m = ((a \mod m)(b \mod m) \mod m
+            \end{align*}
+        \item $a^n \equiv (a \mod m)^n \mod m$
+            \begin{align*}
+                a^n \mod m = (a \mod m)^n \mod m
+            \end{align*}
+        \end{itemize}
+        
+        \begin{subparag}{Example}
+            is $9^{1000} + 9^{10^6}$ divisible by $5$?\\
+            We compute first:
+            \begin{align*}
+                9 \equiv -1 \mod 5
+            \end{align*}
+            Which gives us:
+            \begin{align*}
+                9^{1000} + 9^{10^6} \equiv (-1)^{1000} + (-1)^{10^6} \equiv 1 + 1 \equiv 2 \mod 5 
+            \end{align*}
+            Hence, $9^{1000} + 9^{10^6}$ is not divisible by $5$
+        \end{subparag}
+    \end{parag}
+    \begin{parag}{Check digits $ \mod 97$}
+        Write down an integer in decimal notation $e.g$:
+        \begin{align*}
+            021\;235\;1234
+        \end{align*}
+    Compute its remainder after division by $97$:
+    \begin{align*}
+        021\;235\; 1234 \mod 97 = 95
+    \end{align*}
+    Appends the remainder to the number, as check digit:
+    \begin{align*}
+        021\;235\;1234 \important{95}
+    \end{align*}
+    A common mistake consists in transposing two digits:
+    \begin{align*}
+        021\; 253\;1234\;95
+    \end{align*}
+    The check digits are no longer consistent:
+    \begin{align*}
+        021\; 253\; 1234 \mod 97 = 63
+    \end{align*}
+    
+    \end{parag}
+    \begin{parag}{Procedure $\mod 97 - 10$}
+        It's a variant of the previous one:
+        \begin{enumerate}
+            Append $00$
+            
+        \end{enumerate}
+        
+    
+    \end{parag}
+    
+    
+    
+    
