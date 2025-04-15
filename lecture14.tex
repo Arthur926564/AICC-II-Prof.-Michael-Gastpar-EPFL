@@ -1,0 +1,106 @@
+\lecture{14}{2025-04-02}{Read Slide}{}
+\begin{parag}{Powers in $ \mathbb{Z}/ m \mathbb{Z}$}
+    For an positive integer $k$,
+    \begin{itemize}
+        \item $([a]_m)^k$ is a short hand for $ \underbrace{[a]m[a]m \dots[a]_m}_{ \text{k times}}$
+        \item $([a]_m)^0 = [1]_m$
+    \end{itemize}
+    Note that we do not consider negative power because it is problematic in general except $-1$ which is juste the multiplicative inverse
+
+\end{parag}
+
+
+\begin{parag}{Exercise}
+    Suppose $[a]_m \in \mathbb{Z} / m \mathbb{Z}$ has a multiplicative inverse.\\
+    Does there exist $k$ such that:
+    \begin{align*}
+        ([a]_m)^k = [0]_m
+    \end{align*}
+    We denote first $[b]_m = ([a]_m)^{-1}$. The first statement implies that:
+    \begin{align*}
+        ([b]_m)^k \cdot ([a]_m)^k = [0]_m
+    \end{align*}
+    Which is:
+    \begin{align*}
+        [0]_m &= ([b]_m)^{k-1} \overbrace{[b]_m[a]_m}^{= [1]_m} ([a]_m)^{k-1}\\
+        &=([b]_m)^{k-1}([a]_m)^{k-1}\\
+        &= \dots = [1]_m
+    \end{align*}
+    Which is false. Therefore, The answers is no.
+\end{parag}
+\begin{parag}{Function with multiplicative inverse}
+    \begin{theoreme}
+        In $ \mathbb{Z}/ m \mathbb{Z}$ the following statement are equivalent:
+        \begin{itemize}
+            \item $[a]_m$ has an inverse
+            \item For all $[b]_m$, $[a]_m x = [b]_m$ has a unique solution
+            \item There exists $a[b]_m$, such that $[a]_mx = [b]_m$ has a unique solution
+        \end{itemize}
+    \end{theoreme}
+
+    \begin{subparag}{Proof $1 \to 2$}
+        We multiply both side of $[a]_m x = [b]_m$ by $[a]_m^{-1}$ then we have $x = [a]_m^{-1}[b]_m$ showing that there is a solution and the solution is unique.
+    \end{subparag}
+    \begin{subparag}{Proof $2 \to 1$}
+        For $[b]_m = [1]_m$ we obtain $[a]_mx = [1]_m$ which is a solution by assumption. The solution is the inverse of $a$.
+    \end{subparag}
+    \begin{subparag}{Proof $2 \to 1$}
+       True since (3) is a weaker statement than (2).  (one says for all and the other says there exists)
+    \end{subparag}
+\end{parag}
+\begin{parag}{Proof $3 \to 2$}
+        Here the claim is: $\exists b \suchthat$ it has a unique solution $\implies \forall b$ there is a unique solution. The negation of this claim is:\\
+        $\exists b \suchthat$ either there is no solution or multiple solution $\implies \nexists b \suchthat$ there is a unique solution.\\
+        It says that if there is a $b$ with \important{multiple} solution implies that there is no $b$ with a unique solution.
+    
+        \begin{subparag}{Proof}
+            Let $\left[a\right]_m\left[x_1 \right]_m = \left[b^* \right]_m$ and $ \left[a\right]_m\left[x_2 \right]_m = \left[b^* \right]_m$. Now we define:
+           \begin{equation}  
+               \left[x_3\right]_m = \left[x_1\right]_m - \left[x_2\right]_m\\
+               \left[a\right]_m \left[x_3\right]_m = \left[0\right]_m
+           \end{equation} 
+           Now we select \important{any} $\overline{b}\right]_m$, we then suppose that $\left[a\right]_m\left[x_4\right]_m = \left[\overline{b}\right]_m$, Because of the fact that we have the solution $x_3$ before, we can juste add them up:
+           \begin{equation*} \left[a\right]_m\left(\left[x_3\right]_m + \left[x_3\right]_m\right) = \left[\overline{b}\right]_m \end{equation*}
+        \end{subparag}
+\end{parag}
+\begin{parag}{Proof $3 \implies 2$}
+    We prove this using the contrapositive i.e, we assume that there is a $\left[b\right]_m$ such that $\left[a\right]_mx = \left[b\right]_m$ has either no solution or multiple solutions, and we prove that for no $\left[b\right]_m$, $\left[a\right]_mx = \left[b\right]_m$ has a unique solution.
+    \begin{itemize}
+        \item So suppose that [a]$_m$x = [$b]_m$ has no solution or multiple solutions
+        \item By the pigeonhole principle, the map $x \to ax$ is  neither \important{injective} nor \important{surjective}.
+        \item We can find $a\left[b^*\right]_m \suchthat \left[a\right]_mx = \left[b^*\right]_m$ has multiple solutions say, $x_1$, $x_2$. We define then $x_3 = x_1 - x_2 \neq \left[0\right]_m$
+    \item Hence, $\left[a\right]_mx_3 \right) \left[a\right]_mx_1 - \left[a\right]_mx_2 = \left[b^*\right]_m - \left[b^*\right]_m= \left[0\right]_m$
+    \item So the solution $\left[a\right]_mx = \left[0\right]_m$ has at least two solution $x_3$ and $\left[0\right]_m$
+    \item If $\left[a\right]_mx  =\left[b\right]_m$ has a solution, say $x_4$, then $x_3 + x_4$ is also a solution.
+    \item We conclude that for no $\left[b\right]_m$, $\left[a\right]_mx = \left[b\right]_m$ has a unique solution.
+    \end{itemize}
+\end{parag}
+\begin{parag}{Example}
+    If it exists, find the solution of $\left[2\right]_7x + \left[3\right]_7 = \left[1\right]_7$
+    \begin{align*} 
+        \left[2\right]_7x &= \left[1\right]_7 + \left(-\left[3\right]_7\right)\\
+                          &=\left[2\right]_7x = \left[-2\right]_7\\
+                          &=
+                        x &= \left(\left[-2\right]_7\right)^{-1} \left[5\right]_7\\
+                          &= \left[4\right]_7\left[5\right]_7\\
+                          &= \left[20\right]_7\\
+                          &= \left[6\right]_7
+    \end{align*}
+    
+\end{parag}
+
+
+\subsubsection{$\mathbb{Z}/ p\mathbb{Z}$}
+\begin{parag}{$\mathbb{Z}/ p \mathbb{Z}$ with $p$ prime}
+   \begin{theorem}
+       if $p$ is prime, all elements of $\mathbb{Z} \ p \mathbb{Z}$ except $\left[0\right]_p$ have a multiplicative inverse
+   \end{theorem} 
+   The proof is only taking the fact that the gcd between every number in the classe and $p$ is 1, therefore has an inverse. (except 0 which have p).
+\end{parag}
+\begin{parag}{Euclidiean algorithm}
+    For all this part I think the best is the slide in the pdf Slides 2025 week7 between 100 and 135. or a youtube video.
+    
+\end{parag}
+
+
+
