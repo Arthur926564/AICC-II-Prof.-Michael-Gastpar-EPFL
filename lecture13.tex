@@ -1,0 +1,205 @@
+
+\lecture{13}{2025-04-01}{Multiplicative Inververse}{}
+
+\begin{parag}{Why modular arithmetic}
+    Modular arithmetic is the foundation of number theory, therefore we need number theory for cryptography and for channel coding.
+
+\end{parag}
+\begin{parag}{Introduction to $ \mathbb{Z}/ m \mathbb{Z}$}
+    Instead of considering integers and congruences ( $\mod m$) and write equation like:
+    \begin{align*}
+        a + b \equiv c ( \mod m)
+    \end{align*}
+    We would like to make our life easier like this:
+    \begin{align*}
+        a + b = c
+    \end{align*}
+    This can be done, if we give a new meaning to $a$, $b$ and $c$. namely we make them the congruence classe  $[a]_m, [b]_m [c]_m$ and $[c]_m$.
+    \begin{definition}
+        Let $m > 1$ be an integer, called the modulus.\\
+        The set of all integers congruent to $a (\mod m)$ is called the congruence class of $ a$ modulo $m$.\\
+        it is denoted by $[a]_m$.
+    \end{definition}
+    
+    \begin{framedremark}
+        It is the same foundation as the one of finite field (corps fini) in linear algebra. (With prof. Sherer).
+    \end{framedremark}
+\end{parag}
+
+\begin{parag}{Other definition}
+    \begin{definition}
+        The set of all congruence classes modulo $m$ is denoted by $ \mathbb{Z}/ m \mathbb{Z}$ (which is read $ \mathbb{Z} \mod m$.
+    \end{definition}
+   \begin{subparag}{Note}
+       Some authors use the notation $ \mathbb{Z}_m$
+   \end{subparag} 
+\end{parag}
+
+
+\begin{parag}{Example}
+    Some more example to see how this works:\\
+    if we have the class $[a]_m$ and:
+    \begin{align*}
+        a = mq + r, \text{ with } 0 \leq r \leq m - 1
+    \end{align*}
+    Then we have that:
+    \begin{align*}
+        [a]_m = [r]_m
+    \end{align*}
+    
+    If we take for example $[-13]_9$ and $[5]_9$ we can see here that there are equal such that
+    \begin{align*}
+        [-13]_9 = [5]_9
+    \end{align*}
+
+\end{parag}
+
+\begin{parag}{Sum}
+    In $ \mathbb{Z}/ m \mathbb{Z}$ we define the sum and the product as follows:
+    \begin{itemize}
+        \item $[a]_m + [b]_m = [a + b]_m$
+        \item $[a]_m[b]_m = [ab]_m$
+    \end{itemize}
+    The result is the same regardless the choice of representative. In fact:
+    \begin{itemize}
+        \item if we choose $[a + km]_m$ instead of $[a]_m$
+        \item and $[b + lm]_m$ instead of $[b]_m$
+        \item Then we obtain $[a + km]_m + [b + lm]_m = [a + km + b + lm]_m$ which is equal to $[a + b]_m$
+    \end{itemize}
+
+\end{parag}
+
+\begin{parag}{Properties of $+$ in $ \mathbb{Z} / m \mathbb{Z}$}
+    The sum has the following properties:
+    \begin{itemize}
+        \item $[a]_m + ( [b]_m + [c]_m) = ([a]_m + [b]_m) + [c]_m$
+        \item There exists an additive identity, namely $[0]_m$:
+            \begin{align*}
+                [a]_m + [0]_m = [0]_m + [a]_m = [a]_m
+            \end{align*}
+        \item There exists an inverse with respect to addition: every $[a]_m$ has an inverse, denoted $[-a]_m$ such that:
+            \begin{align*}
+                [a]_m + [-a]_m = [-a]_m + [a]_m = [0]_m
+            \end{align*}
+        \item Commutativity
+            \begin{align*}
+                [a]_m + [b]_m = [b]_m + [a]_m
+            \end{align*}
+    \end{itemize}
+
+\end{parag}
+\begin{parag}{Properties of $ \times$ in $ \mathbb{Z} / m \mathbb{Z}$}
+    The multiplication has the following properties:
+    \begin{itemize}
+        \item associativity
+            \begin{align*}
+                [a]_m([b]_m[c]_m) = ([a]_m[b]_m)[c]_m
+            \end{align*}
+        \item multiplicative identity, namely $[1]_m$:
+            \begin{align*}
+                [a]_m [1]_m = [1]_m[a]_m = [a]_m
+            \end{align*}
+        \item commutativity
+            \begin{align*}
+                [a]_m[b]_m = [b]_m[a]_m
+            \end{align*}
+            
+    \end{itemize}
+
+\end{parag}
+
+
+\begin{parag}{Mixed properties}
+    \begin{itemize}
+        \item Distributivity:
+            \begin{align*}
+                [a]_m([b]_m + [c]_m) = [a]_m[b]_m + [a]_m[c]_m
+            \end{align*}
+    \end{itemize}
+
+    \begin{subparag}{The notation $k[a]_m$ in $ \mathbb{Z}/ m \mathbb{Z}$}
+        For an arbitrary positive integer $k$, $k[a]_m$ is a short hand for 
+        \begin{align*}
+            \underbrace{[a]_m + [a]_m + \cdots  + [a]_m}_{ \text{k times}}
+        \end{align*}
+  We can easily verify that:
+  \begin{align*}
+      k[a]_m = [ka]_m = [k]_m[a]_m
+  \end{align*}
+    \end{subparag}
+\end{parag}
+\begin{parag}{Multiplicative Inverse}
+    Some elements of $ \mathbb{Z} / m \mathbb{Z} $ have the \important{multiplicative inverse}.\\
+    The multiplicative inverse of $[a]_m$, if it exists is an element $[b]_m$ such that:
+    \begin{align*}
+        [a]_m[b]_m = [1]_m
+    \end{align*}
+    \begin{theoreme}
+        The multiplicative inverse if it exits it is unique, and it is denoted by $([a]_m^{-1})$.
+    \end{theoreme}
+    Furthermore $(([a]_m)^{-1})^{-1} = [a]_m$
+   \begin{subparag}{Proof}
+       Suppose first that $ab = 1$ and $ac = 1$ (a has two inverse).\\
+       The we now that $ab = ac$. If we multiply both side by $b$:
+       \begin{align*}
+           bab = bac
+       \end{align*}
+       However we know that $ab = 1 = ba$:
+       \begin{align*}
+           b \cdot 1 = c \cdot 1\\
+           b = c
+       \end{align*}
+   \end{subparag} 
+    
+
+\end{parag}
+
+\begin{parag}{Powers in $ \mathbb{Z}/ m \mathbb{Z}$}
+    For an positive integer $k$,
+    \begin{itemize}
+        \item $([a]_m)^k$ is a short hand for $ \underbrace{[a]m[a]m \dots[a]_m}_{ \text{k times}}$
+        \item $([a]_m)^0 = [1]_m$
+    \end{itemize}
+    Note that we do not consider negative power because it is problematic in general except $-1$ which is juste the multiplicative inverse
+
+\end{parag}
+
+
+\begin{parag}{Exercise}
+    Suppose $[a]_m \in \mathbb{Z} / m \mathbb{Z}$ has a multiplicative inverse.\\
+    Does there exist $k$ such that:
+    \begin{align*}
+        ([a]_m)^k = [0]_m
+    \end{align*}
+    We denote first $[b]_m = ([a]_m)^{-1}$. The first statement implies that:
+    \begin{align*}
+        ([b]_m)^k \cdot ([a]_m)^k = [0]_m
+    \end{align*}
+    Which is:
+    \begin{align*}
+        [0]_m &= ([b]_m)^{k-1} \overbrace{[b]_m[a]_m}^{= [1]_m} ([a]_m)^{k-1}\\
+        &=([b]_m)^{k-1}([a]_m)^{k-1}\\
+        &= \dots = [1]_m
+    \end{align*}
+    Which is false. Therefore, The answers is no.
+\end{parag}
+\begin{parag}{Function with multiplicative inverse}
+    \begin{theoreme}
+        In $ \mathbb{Z}/ m \mathbb{Z}$ the following statement are equivalent:
+        \begin{itemize}
+            \item $[a]_m$ has an inverse
+            \item For all $[b]_m$, $[a]_m x = [b]_m$ has a unique solution
+            \item There exists $a[b]_m$, such that $[a]_mx = [b]_m$ has a unique solution
+        \end{itemize}
+    \end{theoreme}
+
+    \begin{subparag}{Proof $1 \to 2$}
+        We multiply both side of $[a]_m x = [b]_m$ by $[a]_m^{-1}$ then we have $x = [a]_m^{-1}[b]_m$ showing that there is a solution and the solution is unique.
+    \end{subparag}
+    \begin{subparag}{Proof $2 \to 1$}
+        For $[b]_m = [1]_m$ we obtain $[a]_mx = [1]_m$ which is a solution by assumption. The solution is the inverse of $a$.
+    \end{subparag}
+    \begin{subparag}{Proof}
+        
+    \end{subparag}
+\end{parag}
