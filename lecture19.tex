@@ -1,0 +1,58 @@
+\lecture{19}{2025-04-29}{Error Correction}{}
+
+
+\begin{parag}{Point to point communication system}
+    
+\end{parag}
+
+
+\begin{parag}{Motivation Chanel Model}
+    \begin{itemize}
+        \item The internet oftern drops packets due to congestion
+        \item Not all the bits on a storage device can be retrieved
+        \item \important{Wireless signals are very noisy}
+    \end{itemize}
+    We consider two types of channel models:
+    \begin{center}
+        \includegraphics[scale=1]{12025-04-29.png}
+    \end{center}
+    So for the first $0$ let us say we throw a dice, if the outcome is $6$, we will replace the outcome by a question mark or we won't. Therefore, here we can say that the erosion probability is $\frac{1}{6}$.\\
+    However maybe the eraser is not random, maybe someone who know what we're gonna do (the algorithm to find the erasure) will find the one that will be a question mark.
+\\
+Here the channel input alphabet is not necessarily binary.\\
+We can take for the alphabet $\mathcal{A} = \{0, 1, 2, 3, 4\}$ and works with this.
+\end{parag}
+\begin{parag}{Erasure Weight}
+    \begin{definition}
+    We define the \important{erasure weigh} $p$ (resp, \important{error weight $p$}) as the total number of erasures (resp. errors).
+    \end{definition}
+    
+    For example if we take the erasure channel from before, $p= 2$.
+\end{parag}
+\begin{parag}{Channel coding to deal with erasures}
+    Here this is the beginning of every algorithm for channel coding which goes:\\
+    Suppose that the source outputs $2$ bits, and we store them as is (no channel coding):
+\begin{center}
+    \includegraphics[scale=1.2]{22025-04-29.png}
+    
+\end{center}
+f any bit is erased, there is no way to determine the original message (all hypothese are equally possible).\\
+So the goal here is the put redundancy, the goal is the create a redundancy that match exactly the message. The reduncancy serves to deal with the back eyes (i don't rembeber).\\
+So first we got rid of redundancy, we encrypt, and the finaly we add back in redundancy (which is not the same as the one we got rid off).
+    
+\end{parag}
+
+.\\
+So first we got rid of redundancy, we encrypt, and the finaly we add back in redundancy (which is not the same as the one we got rid off).
+
+
+
+
+
+
+
+
+
+
+
+
