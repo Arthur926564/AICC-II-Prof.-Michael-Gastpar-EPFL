@@ -130,7 +130,11 @@ But we can take the alphabet in a smart way:
         \item $n$, the block length
         \item $k =  \log_D \left|\mathcal{C}\right|$ the number of information symbols carried by a codeword. (Equivalently, $\mathcal{C} = D^k$)
     \end{itemize}
+
+\end{parag}
+\begin{parag}{Singleton's bound}
     
+
     \begin{theoreme}
     Refardless of the alphabet size, the minimum distance of a block code satisfies:
     \begin{align*} d_{min} - 1 \leq n-k \end{align*}
@@ -144,10 +148,10 @@ But we can take the alphabet in a smart way:
         \hline
         1 & 0 & 5 & 1 &$\ldots$ & 0 \\
         \hline
-        2 & 2 & 1 & 2 & $\ldots$ & 3
+        2 & 2 & 1 & 2 & $\ldots$ & 3  \\
         $\vdots$ \\
         \hline
-        $D^k$ &  9 & 0 & 2 & $\ddots$ & 2
+        $D^k$ &  9 & 0 & 2 & $\ldots$ & 2
     \end{tabular}
     \end{center}
     You can then get rid of the $d_{min} - 1$ from the right like this:
