@@ -1,0 +1,158 @@
+\lecture{22}{2025-05-07}{PPO midterm hurts}{}
+
+
+
+\begin{parag}{Yesterday}
+    
+    \begin{subparag}{Example}
+        Let $V =  \mathbb{F}_7^3$ and define $S =  \{\left(x_1, x_2, x_3\right): x_i \in \mathbb{F}_7 \text{ and } x_1 + 2x_2 + 3x_3 = 0\}$\\
+        $S$ is a subspace of $V$. (Be sure that you see why)
+    \end{subparag}
+    Let us verify that $\vec{x}, \vec{y} \in S$:\\
+    \begin{enumerate}
+        \item is $a\vec{x} \in S$?
+        \item Is $\vec{x} + \vec{y} \in S$?
+    \end{enumerate}
+    \begin{enumerate}
+        \item $ax_1 + 2ax_2 + 3ax_3 = a\left(x_1 + 2x_2 + 2x_3\right) =  0$
+        \item $\left(x_1 + y_1\right) + 2\left(x_2 + y_2\right) + 3\left(x_3 + y_3\right)$ We want to check if this is still in the subspace:
+            \begin{align*} 
+                x_1 + 2x_2 + 3x_3 + y_1 + 2y_2 + 3y_3 = 0
+            \end{align*}
+            Here the number $1, 2, 3$ are values in $\mathbb{F}_7$ (all the scalar are also in the field)
+    \end{enumerate}
+    Which leads that $S$ is a subspace.
+\end{parag}
+\begin{parag}{Some definitions }
+    \begin{definition}
+    A linéaire combinations of a \textbf{list} $\left(\vec{v}_1, \ldots, \vec{v}_n\right)$ of vectors in $V$ is a vector of the form $\sum_{i = 0}^{n} \lambda_i \vec{v}_i$ where $\lambda_1, \ldots, \lambda_n \in \mathbb{F}$.\\
+    The set of all linear combinations of $\left(\vec{v}_1, \ldots, \vec{v}_n\right)$ is called the \textbf{span} of $\left(\vec{v}_1, \ldots, \vec{v}_n\right)$ denoted span$\left(\vec{v}_1, \ldots, \vec{v}_n\right)$.\\
+if span $\left(\vec{v}_1, \ldots, \vec{v}_n\right) =  V$, we say that $\left(\vec{v}_1, \ldots, \vec{v}_n\right)$ \important{spans} $V$.\\
+A vector space is called \important{finite-dimensional} if some liste of vectors in it spans the whole space. (A list has finite length by definition).
+    \end{definition}
+\end{parag}
+
+\begin{parag}{vector}
+    \begin{theoreme}
+    A list $\left(\vec{v}_1, \ldots, \vec{v}_n\right)$ of vector in $V$ is a basis of $V$ iff every $\vec{v} \in V$ can be written \important{uniquely} in the form
+    \begin{align*} 
+        \vec{v} = \sum_{i = 1}^{n} \lambda_i \vec{v}_i
+    \end{align*}
+    \end{theoreme}
+    \begin{subparag}{Proof $\implies$}
+        The think we say here is, that if there is a basis \important{then} there is a unique representation. The proof is by contradiction:\\
+        Suppose that there is two distinct representation:
+        \begin{align*} 
+            \left(\vec{v}\right) = \sum_{i = 1}^{n} \lambda_i \vec{v}_i - \sum_{i =  1}^{n} \beta_i \vec{v}_i = \vec{0}\\
+            = \sum_{i =  1}^{n} \left(\lambda_i - \beta_i\right) \vec{v}_i =  \vec{0}
+        \end{align*}
+        But all the $\vec{v}_i$ are ``indepedant''therefore all the $\lambda_i - \beta_i$ has to be equal to $0$ therefore, there are equals.
+    \end{subparag}
+    \begin{subparag}{proof $\impliedby$}
+        hm
+    \end{subparag}
+\end{parag}
+
+\begin{parag}{Span}
+   \begin{theoreme}
+    Every spanning list in a vector space can be reduced to a basis of the vector space
+   \end{theoreme} 
+   \begin{subparag}{Proof}
+       Remove all the zero-element of the list\\
+       Of the new list, remove the second element if it is in the linear span of the first. Repeat the same until we have a list in which the second element is not in the linear span of the first.\\
+       Of the new list, remove the third element if it is in the linear span of the first two,\\
+       We just continue\\
+       At the end,  the result is a list of vector that span the vector space and are lineartly independent (or else one vector can be written as a combination of other vector)\\
+       Here we could have use Gram-Schmidt
+   \end{subparag}
+   \begin{theoreme}
+   Any two bases of a finite dimensional vector space have the same length.
+   \end{theoreme}
+   The \important{dimension} of a finite dimensional vector space, $V$ denoted by dim$\left(v\right)$, is defined to be the length of any basis of $V$.
+\end{parag}
+\begin{parag}{Few properties of the dimension of a vector space}
+    let $V$ be a vector space and suppose that dim$\left(V\right) =  n$:
+    \begin{itemize}
+        \item if $\left(\vec{v}_1, \ldots, \vec{v}_n\right)$ is a list of linearly independent vectors in $V$ then, it is a basis of $V$.
+    \end{itemize}
+    
+\end{parag}
+\begin{parag}{Example}
+    We works in $\mathbb{F}_5^3$ and let $S = \{ \vec{v}: \vec{v} = \alpha\left(1, 2, 3\right)\}$\\
+    So we can write the vector as:
+    \begin{align*} \begin{pmatrix} \alpha \\ 2\alpha \\ 3\alpha \end{pmatrix} = \begin{pmatrix} v_1 \\v_2  \\ v_3 \end{pmatrix}  \end{align*}
+    Which implies that:
+    \begin{align*}
+        \begin{case}
+                2v_1 =  v_2\\
+                3v_1 =  v_3
+                \end{case} \iff \begin{case} 2v_1 + 4v_2 = 0\\ 3v_1 + 4v_3 = 0 \end{cases}
+    \end{align*}
+    Therefore:
+    \begin{align*} 
+        S' =  \left\{\vec{v}: 2v_1 + 4v_2 = 0 \text{ and } 3v_1 + 4v_3 = 0\right\}
+    \end{align*}
+\end{parag}
+
+\begin{parag}{Second key example}
+    $v = \mathbb{F}_5^3$ where $\left(v_1, v_2, v_3\right)\left(2\; 3\; 1\right)^T = 0$ which the subspace:
+    \begin{align*}
+        S =  \left\{\vec{v}: 2v_1 + 3v_2 + v_3 = 0\right\}
+    \end{align*}
+    The goal is the describe $S$ by a \important{basis}.\\
+    Let $v_1 = \alpha$ and $v_2 =  \beta$. where $\alpha, \beta \in \mathbb{F}_5$. Then we know that:
+    \begin{align*} v_3 =  -2\alpha - 3\beta =  3\alpha + 2\beta \end{align*}
+    We have there two free variables which leads to:
+    \begin{align*} 
+        \vec{v} &= \left(\alpha, \beta, 3\alpha + 2\beta\right)\\
+                &= \alphag \left(1, 0, 3\right) + \beta\left(0, 1, 2\right)
+    \end{align*}
+\end{parag}
+\begin{parag}{Exercise}
+    Let $S$ be the subspace of $\mathbb{F}_7^3$ spanned by $\vec{v} =  \left(4, 3, 1\right)$. Define $S$ by means of equations.
+\end{parag}
+\begin{parag}{Solution}
+    We first see the it is a one dimensional subspace of $\mathbb{F}_7^3$, Therefore, we only need $2$ equations to describe it.\\
+
+\end{parag}
+\begin{parag}{Theorem}
+    \begin{theoreme}
+    The set of solutions in $V = \mathbb{F}^n$ of $m$ linear homogeneous equations in $n$ variables is a subspaces $S$ of $V$.\\
+    Let $r$ be the dimensionality of the vector space spanned by the coefficient vectors. Then dim $\left(S\right) =  n-r$.\\
+    In particular, if the $m$ vectors of coefficients are linearly independent, then, dim $\left(S\right) ah n-m$.\\
+    Conversely, if $S$ is a subspace  of $V =  \mathbb{F}^n$ with dim $\left(S\right) = k$, there exists a set of $n-k$ linear equations with coefficients that form linearly independent vectors in $V$, the solution of which are the vectors in $S$
+    \end{theoreme}
+\end{parag}
+
+
+\subsection{Rank of matrix}
+\begin{parag}{Definition}
+   \begin{definition}
+    For any matrix with entries in a field $\mathbb{F}$:
+    \begin{itemize}
+    \item The dimension of the vector space spanned by its rows
+    \item  Equals the dimension of the vector spanned by its columns.
+    \end{itemize}
+    It is called the \important{rank of the matrix}
+   \end{definition} 
+\end{parag}
+
+\begin{parag}{theorem 12.2 textbook}
+    \begin{theoreme}
+    an n-dimensional vector space $V$ over a finite field $\mathbb{F}$:
+    \begin{itemize}
+        \item is finite,
+        \item has cardinality
+    \end{itemize}
+    \begin{align*} \text{card}\left(V\right) =  \left[\text{card}\left(\mathbb{F}\right)\right]^n \end{align*}
+    
+    \end{theoreme}
+\end{parag}
+
+
+
+
+
+
+
+
