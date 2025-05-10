@@ -1,10 +1,7 @@
 \lecture{20}{2025-04-30}{The rate}{}
 
     Let use have the code $\mathcal{C}$:
-    \begin{minipage}{0.5\textwidth}
     \begin{align*} 0000\\0011\\1100\\1111 \end{align*}
-    \end{minipage}
-    \begin{minipage}{0.5\textwidth}
     We want to find $n, k, $ rate and $d_{min}$.
     \begin{itemize}
         \item $n = 4$
@@ -12,26 +9,18 @@
         \item rate: $\frac{2}{4} = \frac{1}{2}$
         \item $d_{min} = 2$
     \end{itemize}
-\end{minipage} 
 
     If we take the code:
-    \begin{minipage}{0.5\textwidth}
     \begin{align*} 0000\\ 1111 \end{align*}
-    \end{minipage}
-    \begin{minipage}{0.5\textwidth}
     \begin{itemize}
         \item $n = 4$
         \item $k = \log_2 \left|\mathcal{C}\right| = \log_2 2 = 1$
         \item rate: $\frac{1}{4} = \frac{1}{4}$
         \item $d_{min} = 4$
     \end{itemize}
-\end{minipage} 
  
     For example without binary code:
-    \begin{minipage}{0.5\textwidth}
     \begin{align*} 000\\001\\002\\ \vdots\\ 222 \end{align*}
-    \end{minipage}
-    \begin{minipage}{0.5\textwidth}
     \begin{itemize}
         \item $n = 3$
         \item $k = \log_2 \left|\mathcal{C}\right| = \log_2 27 $
@@ -43,20 +32,15 @@
         \item $d_{min} = 1$
     \end{itemize}
  
-\end{minipage} 
     
 But we can take the alphabet in a smart way:
-\begin{minpage}{0.5\textwidth}
     \begin{align*} 000\\011\\022\\110\\220\\121\\102\\201\\212 \end{align*}
-\end{minpage}
-    \begin{minipage}{0.5\textwidth}
      \begin{itemize}
         \item $n = 3$
         \item $k = \log_3 \left|\mathcal{C}\right| = \log_3 9 = 2$
         \item rate: $\frac{k}{n} = \frac{2}{3}$
         \item $d_{min} = 2$
     \end{itemize}
-    \end{minipage}
 
 
 \begin{parag}{Erasure correction: how it relates to $d_{min}\left(\mathcal{C}\right)$}

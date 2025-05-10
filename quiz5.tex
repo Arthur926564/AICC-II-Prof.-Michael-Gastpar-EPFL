@@ -1,0 +1,78 @@
+\section{Quiz 5}
+
+I found this quiz kind of hard so I wanted to do a recap to have it again if I needed it.
+\begin{parag}{Question 1}
+        \begin{subparag}{Question}
+            Consider a communication system consisting of a binary block code with uniformly at random chosen, an error channel, and a minimum-distance decoder. Check the correct statement about the minimum distance decoder.\\
+            \begin{enumerate}
+                \item None of the others can be stated with certainty due to missing information
+                \item It minimizes the error probability if the channel is a binary symmetric channel with crossover (flip) probability smaller than $\frac{1}{2}$
+                \item It always minimizes the error probability
+                \item It minimizes the error probability if the channel is a binary symmetric channel.
+            \end{enumerate}
+        \end{subparag}
+
+        Here we have two things that we need to know:\\
+        The minimum distance decoder is \important{maximum distance decoder} when the channel is memoryless and symmetric which means that it minimizes the probability of the decoding error. This means that  the third option doesn't work. We have two options left  (three). For the second option we have to go back to the exercices set of the week 10 exercice 3. We are looking for the probability:\\
+        For choosing a $k$ bits out of $n$, there are $\begin{pmatrix} n \\ k \end{pmatrix} $ ways to do so, and each of them have a probability of $p^k\left(1-p\right)^{n-k}$ which leads to: $\begin{pmatrix} n \\ k \end{pmatrix} p^k\left(1-p\right)^{n-k}$. However if we know $c$ we can get rid of the combinatorial computation and have:
+        \begin{align*} P\left(y ∣ c\right) = p^k\left(1-p\right)^{n-k} \end{align*}
+
+        So now we are looking for the minimum when $p \leq \frac{1}{2}$ , because of this we can see that the number of the right is only bigger than the number on the left:
+        \begin{align*} \frac{p}{1-p} < 1 \end{align*}
+        And Now if we want to make this the biggest the goal is making $d$ the smallest and $n-d$ the biggest, A.K.A., $d$ the smallest.\\
+        So, When $d \leq \frac{1}{2}$ all we said works find, the minimum distance decoding works and is optimal.\\
+    When $p = \frac{1}{2}$ all codewords are equally likely $\implies$ any decoding strategy is equally good, or bad.\\
+    And when $p > \frac{1}{2}$ we would be better using the ``inverse'' of the minimum distance decoder.\\
+    Therefore, the answer is the second.
+
+\end{parag}
+\begin{parag}{Question 2}
+   \begin{subparag}{Question}
+       How many $x \in \mathbb{Z} / 23 \mathbb{Z}$ satisfy the equation $0 =  1 -x + x^2 - x^3 + \cdots -x^{21} + x^{22} - x^{23}$, when all operations are with respect to the field $ \left(\mathbb{Z} / 23 \mathbb{Z}, +, \cdot \right)$? 
+   \end{subparag} 
+   So here the question is, how may solution to the equation:
+   \begin{align*} 0 = \sum_{n = 0}^{23} \left(-1\right)^nx^n \end{align*}
+   Which is a geometric series. (I didn't have that first but) you can replace the geometric series by its formula:
+   \begin{align*} \sum_{n = 0}^{23} \left(-1\right)^nx^n = \frac{\left(-x\right)^{24} - 1}{x + 1}= \frac{x^{24} - 1}{- x - 1} \end{align*}
+So from here it becomes easier, we want to get rid of this \nth{24} power which is painful. To be able to do so we know something, which is the little theorem of Fermat:
+\begin{align*} x^{p-1} = 1 \Mod p \end{align*}
+therefore we have that $x^22 =  1 \implies x^{24} = 1\cdot x^2$. Which give:
+\begin{align*} 0 = \frac{x^2-1 }{-x -1} \end{align*}
+Where $-x - 1 = x + 1$:\\
+\begin{align*} 
+    0 &=  \frac{x^2 - 1}{x + 1}\\
+      &= \frac{\left(x + 1\right)\left(x-1\right)}{x+1}\\
+      &= x - 1\\
+    x &= 1
+\end{align*}
+Which give us only one solution.
+\end{parag}
+\begin{parag}{Question 3}
+    For the last question, 
+    \begin{subparag}{Question}
+        Let $E$ be a subspace of $\mathbb{F}_7^4$ which consists of elements $\vec{x} = \left(x_1, x_2, x_3, x_4\right)$ satisfying:
+        \begin{align*} 
+            x_1 + 6x_2 + 3x_3 + 4x_4 = 0\\
+            3x_1 + 6x_2 + x_3 + 3x_4 = 0\\
+            5x_1 + 2x_2 + x_3 + 3x_4 =  0
+        \end{align*}
+        What is the dimension of $E$? 
+    \end{subparag}
+    Here how I see it is like asking  the dimension of the kernel ( noyau). We have a matrix and we ask what the dimension of the solution of the equation $A \cdot  \vec{x} =  \vec{0}$. In fact the subspace if the kernel of the application which has the matrix:
+    \begin{align*} 
+        A = \begin{pmatrix} 1 & 6 & 3 & 4 \\ 3 & 6 & 1 & 3 \\ 5 & 2 & 1 & 3 \end{pmatrix} 
+    \end{align*}
+    There fore you can use Gauss's method and be careful because we are in $\mathbb{F}_7$. and the find the kernel like always. Here the first mistake is to reduce the system and then to give all the linearly independent vector as the dimensions. But this is the opposite, this would gives us the rank. which as you can see is not the subspace $E$.
+    \begin{align*} E =  \left\{\vec{x} \in \mathbb{F}_7^4: A \cdot  \vec{x} =  \vec{0}\right\} \end{align*}
+    Where:
+    \begin{align*} 
+        A = \begin{pmatrix} 1 & 6 & 3 & 4 \\ 3 & 6 & 1 & 3 \\ 5 & 2 & 1 & 3 \end{pmatrix} 
+    \end{align*}
+    If you did it correctly, the answer is $1$.
+
+\end{parag}
+
+
+
+
+
