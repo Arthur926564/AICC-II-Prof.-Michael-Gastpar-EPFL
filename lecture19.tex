@@ -66,11 +66,21 @@ We add redundancy like some backups bits to make it stronger.
     Since the alphabet is $\{0, 1\}$, we call it a \important{binary} $\left(n, k\right)$ block code.
 
     \begin{framedremark}
-        We consider only bock codes
+        We consider only block codes
     \end{framedremark}
     
+    \begin{definition}
+        A \important{block code} of length $n$, defined on a alphabet $\mathcal{A}$,  \important{is} a subset of $\mathcal{C}$ of $\mathcal{A}^n$, which means it is a sequence of $n$ elements of $\mathcal{A}$. Element of the block code are called \important{codeword}.
+    \end{definition}
     
 \end{parag}
+\begin{parag}{Rate}
+    \begin{definition}
+        the \important{rate} of the code is defined by:
+        \begin{align*} r = \frac{1}{n} \log_{\left|\mathcal{A}\right|}\left|\mathcal{C}\right| \end{align*}
+    \end{definition}
+\end{parag}
+
 
 \begin{parag}{Example}
     The following is a convolutional encoder: every encoder input symbol produces two encoder output symbols.\\
@@ -191,12 +201,26 @@ We called here $000111$ the winner! (we don't know for sure if it is \important{
 \begin{parag}{Error detection}
     The question now is how does error detection is related to $d_{min}\left(\mathcal{C}\right)$
     \begin{theoreme}
+        Error detection:
         \begin{enumerate}
             \item Channel errors of weight $p < d_{min}\left(\mathcal{C}\right)$ do not lead to a codeword. Hence they are detected.
             \item Some channel errors of weight $p \geq d_{min}\left(\mathcal{C}\right)$ do lead to another codeword. Hence they cannot be detected by a minimum-distance decoder.
         \end{enumerate}
         
     \end{theoreme}
+    \begin{framedremark}
+        I juste want to put the theorem found in the book given in moodle because I fond it clearer:
+    \end{framedremark}
+    \begin{theoreme}
+    Détection d'erreur (theorem 11.2):
+    \begin{enumerate}
+        \item Un code $\mathcal{C}$ est capable de détecter toutes les erreurs de poids $p < d_{min}\left(\mathcal{C}\right)$
+        \item Inversement, si un code $\mathcal{C}$ peut détecter toutes les erreurs de poids $ \leq p$, alors $p < d_{min}\left(\mathcal{C}\right)$
+    \end{enumerate}
+    
+
+    \end{theoreme}
+    
     \begin{subparag}{Note}
         Erasures are always detected (by definition)
     \end{subparag}
