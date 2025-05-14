@@ -1,0 +1,180 @@
+\lecture{24}{2025-05-14}{Decoding}{}
+
+\begin{parag}{How to decode}
+    Decoding is about deciding the information word from the channel output. If the channel output $\vec{y}$ is a codeword, then we assume that it equals the channel input.\\
+    In this case decoding is about inverting the encoding map. This is trivial if the generator matrix is in systematic form. (We read out the first $k$ symbols of $\vec{y}$).\\
+    But how to know if the channel output is a codeword?\\
+    We use the fact that a linear block code, like every subspace of a vector space, can be defined by a system of homogeneous linear equations.\\
+    The channel output is a codeword if and only if it satisfies those equations.
+\end{parag}
+
+\begin{parag}{First question}
+    After having received the word $\vec{y} \in \mathbb{F}^n$ the question is:
+    \begin{center}
+        is $\vec{y} \in \mathbb{F}^n$ a codeword?
+    \end{center}
+    \begin{subparag}{Recall}
+        We recall that 
+        \begin{align*} S =  \left\{\vec{y} : \vec{y}H^T = \vec{0}\right\} \end{align*}
+        Is $\vec{y}$ in the nullspace of $H^T$? If yes, then it is a codeword.
+    \end{subparag}
+\end{parag}
+
+
+\begin{parag}{Example}
+    This example is from last lecture.\\
+    Given the relation:
+    \begin{align*} 
+        \begin{cases}
+            c_4 = 3c_1 + 3c_2 \\ c_5 =  2c_1 + 4c_2
+        \end{cases} \implies 
+        \begin{cases}
+            -3c_1 -3c_2  + c_4 = 0\\
+            -2c_1 -4c_2 + c_5 = 0
+        \end{cases} \implies 
+        \begin{cases}
+            2c_1 + 2c_2 + c_4 = 0\\
+            3c_1 + c_2 + c_5 = 0
+        \end{cases}
+    \end{align*}
+    Therefore $\vec{y} \in \mathcal{C}$ if and only if:
+    \begin{align*} 
+        \begin{cases}
+            2y_1 + 2y_2 + y_4 = 0\\
+            3y_1 + y_2 + y_5 = 0
+        \end{cases}
+    \end{align*}
+    Which gives us:
+    \begin{align*} 
+        \underbrace{\begin{pmatrix} y_1 & y_2 & y_3 & y_4 & y_5 \end{pmatrix}  \begin{pmatrix} 2 & 3 \\ 2 & 1 \\ 0 & 0 \\ 1  & 0 \\ 0 & 1 \end{pmatrix}}_{H^T} =  \vec{0}
+    \end{align*}
+\end{parag}
+\subsubsection{Parity Check Matrix}
+    \begin{parag}{Parity Check}
+        \begin{definition}
+       \important{A parity-check Matrix} $H$ of a linear $\left(n, k\right)$ code is an $\left(n-k\right) \times n$ matrix that contains the coefficients of a systems of homogeneous linear equations that defines the code.
+        \end{definition}
+       \begin{subparag}{Example}
+           \begin{align*} 
+        \begin{pmatrix} y_1 & y_2 & y_3 & y_4 & y_5 \end{pmatrix}  \begin{pmatrix} 2 & 3 \\ 2 & 1 \\ 0 & 0 \\ 1  & 0 \\ 0 & 1 \end{pmatrix} =  \vec{0} \iff 
+        \begin{cases}
+            2y_1 + 2y_2 + y_4 = 0\\
+            3y_1 + y_2 + y_5 = 0
+        \end{cases}
+           \end{align*}
+           \begin{framedremark}
+           Which is the same thing just the other way around (There is no fancy things here)
+           \end{framedremark}
+       \end{subparag}
+    \end{parag}
+    
+    \begin{parag}{Theorem}
+        \begin{theoreme}
+        If $G = \left(I_k, P\right)$ where $P$ is a $k \times \left(n-k\right)$ matrix, is a generator matrix (in systematic form) of a linear $\left(n, k\right)$ block code, then:
+        \begin{align*} H = \left(-P^T, I_{n-k}\right) \end{align*}
+        is a parity-check matrix of the same code.
+        \end{theoreme}
+        \begin{subparag}{Proof}
+            $H =  \left(-P^T, I_{n-k}\right)$ has rank of $n-k$, hence it defines a system of equations, the solution of which is a subspace of $\mathbb{F}^n$ of dimension $k$.\\
+            We want to show that $\vec{u}GH^t =  \vec{0}$ for all information vector $\vec{u}$.\\
+            This is true if and only if $GH^T$ is the zero matrix (of size $k \times \left(n-k\right)$).
+            \begin{align*} 
+                GH^T =  \underbrace{\left(I_k, P\right)}_{G}\overbrace{\begin{pmatrix} -P \\ I_{n-k} \end{pmatrix}}^{H^T} =  -P + P = 0
+            \end{align*}
+        \end{subparag}
+    \end{parag}
+    \begin{parag}{Example}
+        $G =  \begin{pmatrix}1  & 0 & 0 & 3 & 2 \\ 0 & 1 & 0 & 3 & 4 \\ 0 & 0 & 1 & 0 & 0 \end{pmatrix} $ is the generator matrix of a $\left(5, 3\right)$ code over $\mathbb{F}_5$.\\
+So to find the parity check matrix We can just do:
+        \begin{align*} H = \begin{pmatrix} -3 & -3 & 0 & 1 & 0 \\ -2 & -4 & 0 &  & 1 \end{pmatrix} =  \begin{pmatrix} 2 & 2 & 0 & 1 & 0 \\ 3 & 1 & 0 & 0 & 1 \end{pmatrix}  \end{align*}
+        Is a corresponding parity check matrix.
+        \begin{subparag}{Sub-example}
+            Code of all sequences with even number of ones. The $H$ matrix was juste:
+            \begin{align*} H = \begin{pmatrix} 1 & 1 & 1 & 1 & \ldots & 1 \end{pmatrix}  \end{align*}
+            So for $k$ we have it to be equal to $n - 1$.\\
+            Therefore for the generator matrix if we a $k$ identity matrix:
+            \begin{align*} 
+                \begin{pmatrix} 1 & 0 & 0 &0  & 0 & 0 \\ 0 & 1 & 0 & 0 & 0 & 0 \\ 0 & 0 & \vdots & 0 & 0 & 0 \\ 0 & 0 & 0 & 0  & 1 & -1 \\ 0 & 1 & 1  & 1 & 1 & 1 \end{pmatrix} 
+            \end{align*}
+            La matrice est pas juste
+        \end{subparag}
+    \end{parag}
+    \begin{parag}{Syndrome}
+        \begin{definition}
+            Let $H$ be the $\left(n-k\right) \times n$ parity-check matrix of a linear block code $\mathcal{C} \subset \mathbb{F}^n$ and let $\vec{y}\in \mathbb{F}^n$.\\
+            The \important{syndrome} of $\vec{y}$ is the vector:
+            \begin{align*} \vec{s} =  \vec{y}H^T \end{align*}
+            By definition, 
+            \begin{align*} \vec{y} \in \mathcal{C} \iff \vec{s} =  \vec{0} \end{align*}
+        \end{definition}
+        The syndrome helps us to find the codeword, if when noise comme in the information. If the vector is not all zeros, we know that there has noise in the information, it will reveal to us the error sequence.
+
+    \end{parag}
+
+    \subsection{Summary}
+
+\begin{parag}{Linear Code}
+    Linear code have a specific structure that allows us to:
+    \begin{itemize}
+        \item Easily understand code performance
+        \item Simplify encoding
+        \item Simplify decoding
+    \end{itemize}
+    Where the codewords forms a subspace of $\mathbb{F}^n$.\\
+    \begin{enumerate}
+        \item First the important thing is $d_{min}\left(\mathcal{C}\right) =  \text{min}_{\vec{c} \neq \vec{0}} w\left(\vec{c}\right)$ 
+        \item The goal is to replace the \important{whole} encoding map to only the generator matrix (which is smaller to an encoding map). \\
+            For a code $\mathcal{C} \subset \mathbb{F}^n$ with basis $\left(\vec{c}_1, \ldots, \vec{c}_n\right)$:
+            \begin{align*} G = \begin{pmatrix} \vec{c}_1 \\ \vdots \\ \vec{c}_n  \end{pmatrix} \in \mathbb{F}^{k \times n} \end{align*}
+
+            where $G = \begin{pmatrix} 1 & 0 & 0 & \mid & p_1 \\ 0 & \ddots & 0 & \mid & p_2 \\ 0 & 0 & 1 & \mid & p_3 \end{pmatrix} , \left(I_k \mid P\right)$  Which gives us:
+            \begin{align*} \vec{u}G = \left( \underbrace{u_1, \ldots, u_k}_{\vec{u}I}, \underbrace{ c_{k+1}, \ldots, c_n}_{\vec{u}P}\right)\end{align*}
+        \item To check if the received codeowrd $\vec{y} $ is a codeword we do $\vec{y}H^T =  \vec{0}$
+    \end{enumerate}
+
+    
+    
+\end{parag}
+
+
+    \begin{parag}{Example (Hamming codes)}
+        For every integer $m \geq 2$ there exists a binary Hamming code of parameters:
+        \begin{align*} 
+            n =  2^m - 1\\
+            k =  n-m
+        \end{align*}
+        The parity-check matrix is the $m \times n$ matrix whose columns consist of all non-zero vectors of length $m$. (which means all elements of $\mathbb{F}^m$)\\
+        Hamming codes are easy to encode and to decode.
+        \begin{subparag}{Example (cont.)}
+            For instance, let $m =  3$.\\
+            A valid parity check matrix is:
+            \begin{align*} H =  \begin{pmatrix} 1 & 0 & 1 & 0 & 1 & 0 & 1 \\ 0 & 1 & 1 & 0 & 0 & 1 & 1 \\ 0 & 0 & 0 & 1 & 1 & 1 & 1 \end{pmatrix}  \end{align*}
+            Where, for convenience, the $i$\Th column is the binary representation of $i$.\\
+            The block length is $n =  2^m - 1 = 7$.\\
+            The rank of $H$ is $m$, hence the code dimension is $k =  n-m =  4$.\\
+            $\vec{c} = \left(1, 1, 1, 0, \ldots, 0\right)$ is a codeword because $\vec{c}H^T =  0$ .\\
+            Hence $d_{min} \leq 3$.\\
+            We show that $d_{min} =  3$ by showing how to correct all error patterns of weight $1$.\\
+            \begin{framedremark}
+                The reason why $\vec{c}$ is a codeword is:\\
+                First, why does the codeword is in the nullspace of $H^T$. We have said it when we introduced the parity check matrix, this matrix \important{Is} the matrix that contains the system of \important{homogeneous linear equations} which means something like his: $\vec{y}H^T =  \vec{0}$ ( you can check the example above). In fact the code is literally defined like this:
+                \begin{align*} \mathcal{C} =  \left\{\vec{c} \in \mathbb{F}_2^n : \; H \vec{c}^T =  \vec{0}\right\} \end{align*}
+                Which is the kernel of the subspace.\\
+                For the vector of our example we can just compute all the matrix, but you don't have to because: you can get rid of the $4$ last rows (columns in $H$ ) because our vector $\vec{c}$ is always null after the third column. Therefore for the first column you get $1 + 1 = 0$ same thing for the second and $0 + 0 + 0 = 0$ for the third. Which gives only zeros.\\
+                Because the weight of the vector $\vec{c} =  3$ we can easily say that $d_{min} \leq 3$ because it is upper bound by $\vec{c}$.\\
+                As said in the course, to correct a 1 bit error, you must have $d_{min} \geq 3$. and because we had shown that $d_{min} \leq 3$ the only way is $d_{min} =  3$.
+            \end{framedremark}
+            \begin{framedremark}
+            And now you can see how it works because independently of the last $4$ rows, which gives us that the information is ``still'' here after the encoding.
+            \end{framedremark}
+        \end{subparag}
+        \begin{subparag}{Example}
+            Let $\vec{y} =  \vec{c} + \vec{e}$ be the channel output, where $\vec{c} \in \mathcal{C}, \vec{e} \in \mathbb{F}_2^n$ and $w\left(\vec{e}\right) =  1$.\\
+           \begin{align*} \vec{s} =  \vec{y}H^T = \vec{c}H^T + \vec{e}H^T =  \vec{e}H^T \end{align*}
+           $\vec{s} =  \vec{e}H^T$ is the binary representation of the position of the error.\\
+           Hence we can correct the error.\\
+           For instance let's take a canonical vector $\vec{e}_i =  \left(0, 0, \ldots, \overbrace{1}^{i}\ldots, 0, 0\right)H^T$, this will give us the $i$\Th row of $H^Tc$ or the $i\Th$ column of $H$. 
+        \end{subparag}
+        
+    \end{parag}
+
