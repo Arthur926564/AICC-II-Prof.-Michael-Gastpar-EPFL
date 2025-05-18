@@ -1,0 +1,61 @@
+\lecture{12}{2025-03-26}{Modulo}{}
+ \begin{parag}{Check digits $ \mod 97$}
+        Write down an integer in decimal notation $e.g$:
+        \begin{align*}
+            021\;235\;1234
+        \end{align*}
+    Compute its remainder after division by $97$:
+    \begin{align*}
+        021\;235\; 1234 \mod 97 = 95
+    \end{align*}
+    Appends the remainder to the number, as check digit:
+    \begin{align*}
+        021\;235\;1234 \important{95}
+    \end{align*}
+    A common mistake consists in transposing two digits:
+    \begin{align*}
+        021\; 253\;1234\;95
+    \end{align*}
+    The check digits are no longer consistent:
+    \begin{align*}
+        021\; 253\; 1234 \mod 97 = 63
+    \end{align*}
+    
+    \end{parag}
+    \begin{parag}{Procedure $\mod 97 - 10$}
+        It's a variant of the previous one:
+        \begin{enumerate}
+            \item Append $00$ (i.e., multiply the number by 100)
+            \item  Let $r$ be the remainder of the division by $97$
+            \item The check digits are $c =  98 - r$ (wrriten as a 2 digit number, e.g. $03$)
+            \item Replace $00$ with $c$
+            \item Check: The resulting number $\Mod 97$ equals $1$.
+        \end{enumerate}
+        Which look like this if you wanted to do a function:
+        \begin{align*} n \to 100n + \underbrace{98 - \left(100n \Mod 97\right)}_{\text{check digit}} \end{align*}
+        To check if the encoding is correct, we juste have to see if the result mode 97 is equals to $1$, for instance:
+        \begin{align*} 
+            100n + 98 - \left(100n \Mod 97\right) \Mod 97\\
+            &= 100n + 98 - 100n \Mod 97\\
+            &= 98 \Mod 97\\
+            &= 1
+        \end{align*}
+    
+    \end{parag}
+    \begin{parag}{IBAN (Internation Bank account number)}
+        Main difference to MOD 97 - 10: The check digits are in position $3$ and $4$:
+        \begin{subparag}{Example}
+            \begin{enumerate}
+                \item Account number: $\overbrace{00243}^{\text{bank, 5 digits}}\overbrace{0001\,243\,6789}^{\text{account, 12 digits}}$
+                \item Append CH (for swiss bank account): $00243\,0001\,2345\,6789\,$\important{CH}
+                \item We then convert the letter into number ($A \to 10, Z \to 35\right)$, we then finally use the MOD 97 - 10 procedure
+            \end{enumerate}
+            
+        \end{subparag}
+        
+    \end{parag}
+    
+    
+    
+    
+    

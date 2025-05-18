@@ -14,6 +14,16 @@
     \end{parag}
     
     \begin{parag}{Euclidiean division}
+        \begin{subparag}{Example}
+            For example if we take $7$ divided by $2$ this is equal to $3.5$. (because $2 \cdot  3.5 = 7$)\\
+            But if we take $25$ divided by $4 = 6.25$ but,
+            \begin{align*} 25 \Mod 4 = 1 \end{align*}
+            Which leads to $25 = 4 \cdot  6 + 1$.
+            \begin{framedremark}
+                the goal here is to find that future ``inverse'' in the integer world.
+            \end{framedremark}
+
+        \end{subparag}
         \begin{subparag}{The division algorithm}
             Given integers a (the dividend) and $m$ the divisor:
             \begin{align*}
@@ -37,6 +47,27 @@
         \end{subparag}
     \end{parag}
     
+    \begin{parag}{Congruence}
+        Sometimes we are interested in knowing if two numbers have the same remainder when divided by $m$.
+        \begin{definition}
+            Two integers $a$ and $b$ are said to be \important{congruent modulo} $m$ , denoted:
+            \begin{align*} a \equiv b \left(\Mod m\right) \end{align*}
+            if $m \mid a - b$.
+            (or $m$ divided $a - b$)
+        \end{definition}
+        \begin{subparag}{Note}
+            Do not confuse the \important{relation} $a \equiv b \Mod m$ and the \important{function}  $a \to a \Mod m$.
+        \end{subparag}
+    \end{parag}
+    \begin{parag}{Some laws that can be useful}
+        \begin{itemize}
+            \item $a \equiv b \Mod m$
+            \item $\left(a-b\right) \Mod m = 0$
+            \item $a \Mod m =  b \Mod m$
+        \end{itemize}
+    \end{parag}
+    
+    
     \begin{parag}{Congruence is an equivalence relation}
         A binary relation $ \sim$ on a set is an \important{equivalence relation} if and only if the following three axioms are satisfied:
         \begin{itemize}
@@ -48,6 +79,13 @@
         One of the consequences is that we can form equivalence classes and we can work with one representative of each class (this will become useful later.)
     
     \end{parag}
+    \begin{parag}{Equivalence classes}
+        An equivalence relation $\sim$ breaks $A$ into disjoint sets, called \important{equivalence classes}. \\
+        It is like every element that ``have the same relation'' as $a$:
+        \begin{align*} \left[a\right] = \left\{x \in A \mid x \sim a\right\} \end{align*}
+        This will be very useful to works with $ \mathbb{Z} / m \mathbb{Z}$.
+    \end{parag}
+    
     
     \begin{parag}{Modulo}
         \begin{theoreme}
@@ -93,39 +131,4 @@
             Hence, $9^{1000} + 9^{10^6}$ is not divisible by $5$
         \end{subparag}
     \end{parag}
-    \begin{parag}{Check digits $ \mod 97$}
-        Write down an integer in decimal notation $e.g$:
-        \begin{align*}
-            021\;235\;1234
-        \end{align*}
-    Compute its remainder after division by $97$:
-    \begin{align*}
-        021\;235\; 1234 \mod 97 = 95
-    \end{align*}
-    Appends the remainder to the number, as check digit:
-    \begin{align*}
-        021\;235\;1234 \important{95}
-    \end{align*}
-    A common mistake consists in transposing two digits:
-    \begin{align*}
-        021\; 253\;1234\;95
-    \end{align*}
-    The check digits are no longer consistent:
-    \begin{align*}
-        021\; 253\; 1234 \mod 97 = 63
-    \end{align*}
-    
-    \end{parag}
-    \begin{parag}{Procedure $\mod 97 - 10$}
-        It's a variant of the previous one:
-        \begin{enumerate}
-            Append $00$
-            
-        \end{enumerate}
-        
-    
-    \end{parag}
-    
-    
-    
-    
+   
