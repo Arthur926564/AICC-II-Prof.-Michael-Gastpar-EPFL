@@ -1,0 +1,127 @@
+\subsection{Reed Solomon}
+\lecture{27}{2025-05-27}{Reed-Solomon}{}
+
+\begin{parag}{Polynomial}
+    
+    \begin{definition}
+        Let $\mathcal{K}$ be a finite field. A polynomial $P$ with coefficient in $\mathcal{K}$ is a mapping $\mathcal{K} \to \mathcal{K}$ of the form:
+        \begin{align*} 
+            X \to P\left(X\right) =  a_1 + a_2X + \ldots + a_{m+1} X^m
+        \end{align*}
+        Where $a_1, \ldots, a_{m+1}$ is a sequence of elements in $\mathcal{K}$.\\
+        The power of the polynom is the greatest power affected by a non-zero elements.
+    \end{definition}
+    For all sequence $\vec{u} =  \left(u_1, \ldots, u_k\right) \in \mathcal{K}^k$ of $k$ elements of $\mathcal{K}$, we called $P_{\vec{u}}$ the polynom where the coefficient are $u_1, \ldots, u_k$ by increasing power. In other terms:
+    \begin{definition}
+    \begin{align*} 
+        P_{\vec{u}}\left(X\right) \underbrace{= }_{def} u_1 + u_2X + u_3X^2 + \cdots + u_kX^{k-1}
+    \end{align*}
+    Therefore, $P_{\vec{u}}$ is of degree $k-1$. 
+    \end{definition}
+    We can now define the Reed-Solomon Code:
+\end{parag}
+
+
+
+\begin{parag}{Reed-Solomon}
+   \begin{definition}
+   Let $n$ and $k$ be integers with $1 \leq k \leq n$. A Reed-Solomon code with the parameters $\left(n, k\right)$ is defined as:
+   \begin{itemize}
+       \item The alphabet is a finite field $\mathcal{K}$ of cardinality $\geq n$
+       \item Choosen $n$ disctinct elements of $\mathcal{K}$, $a_1, a_2, \ldots, a_n$. A sequence of symbols $\vec{u}=  \left(u_1, \ldots, u_k\right) \in \mathcal{k}^k$ is encoded in the $n$ sequence symbols $\vec{x} = \left(x_1, \ldots, x_n\right) \in \mathcal{K}^n$ defined by:
+           \begin{align*} 
+               x_i =  P_{\vec{u}}\left(a_i\right) \mathspace \forall i, 1\ldots n
+           \end{align*}
+   \end{itemize}
+   The Reed Solomon $\mathcal{C}$ is the subset of all the encoding $\vec{x}$ possible, for all $\vec{u} \in \mathcal{K}^k$. This is therefore, a codeword of length $n$.
+   \end{definition} 
+\end{parag}
+\begin{parag}{Example}
+    Let us build a Reed Solomon code on $\mathbb{F}_5$. Let us choose the maximum possible $n= 5$. (all the elements of $\mathbb{F}_5$).\\
+    We also have to choose $5$ elements of $\mathbb{F}_5$, which is all the elements of $\mathbb{F}_5$ ($a_1 = 0, a_2 = 1, \ldots, a_5 = 4$)\\
+    Let us compute the encoding. For instance if the message is $\vec{u} = \left(0, 0\right)$ the polynomial to evaluate is $P_{\vec{0}}= 0$, therefore $P_{\vec{0}}\left(a_1\right) =  \cdots = P_{\vec{0}}\left(a_5\right) = 0$, and the codeword corresponding to it is $\vec{x} = \left(0, 0, 0, 0, 0\right)$.\\
+    If $\vec{u} =  \left(3, 2\right)$, then $P_{\vec{u}}\left(X\right) = P_{32}\left(X\right) = 3 + 2X$ then:
+    \begin{align*} 
+        P_{\vec{u}}\left(a_1\right) =  P_{\vec{u}}\left(0\right) = 3\\
+        P_{\vec{u}}\left(a_2\right) =  P_{\vec{u}}\left(1\right) = 0\\
+        P_{\vec{u}}\left(a_3\right) =  P_{\vec{u}}\left(2\right) = 2\\
+        P_{\vec{u}}\left(a_4\right) =  P_{\vec{u}}\left(3\right) = 4\\
+        P_{\vec{u}}\left(a_5\right) =  P_{\vec{u}}\left(4\right) = 1
+    \end{align*}
+    Therefore having $\vec{u} = \left(3, 2\right)$, we get the encoding:
+    \begin{align*} 
+        \vec{x} =  \left(3, 0, 2, 4, 1\right)
+    \end{align*}
+    By doing this for the $25$ sequence possible of $k = 2$ elements of $\mathbb{F}_5$ we obtain the table of encoding:
+    \begin{center} \begin{tabular}{ccc}$\vec{u}$ & $P_{\vec{u}}\left(X\right)$ & $\vec{x}$ \\ 00 & 0 & 00000 \\ 01 & $X$ & 01234 \\ 02 & $2X$ & 02413 \\ 03 & $3X$ & 03142 \\ 04 & 4 $X$ & 04321 \\ 10 & 1 & 11111 \\ 11 & 1 + X & 12340 \\ 12 & 1 + 2X & 12024 \\ 13 & 1 + 3X & 14203 \\ 14 & 1 + 4X & 10432 \\ 20 & 2 & 22222 \\ 21 & 2 + X & 23401 \\ 22 & 2 + 2X & 24130 \\ 23 & 2 + 3X & 20314 \\ 24 & 2 + 4X & 21043 \\ 30 & 3 & 33333 \\ 31 & 3 + X & 34012 \\ 23 & 3 + 2X & 30241 \\ 34 & 3 + 4X & 32104 \\ 40 & 3 & 44444 \\ 41 & 4 + X & 40123 \\ 42 &4 + 2X  &41302  \\43  &4+3X  & 42031 \\44  & 4 + 4X &43210  \end{tabular} \end{center} 
+\end{parag}
+\begin{parag}{Property}
+    We are going to see now that Reed-Solomon Code have \important{great} property. To be able to remark this, we need a fondamental result of polynomial, which say that a polynomial has a number of root smaller or equal at his degree.
+    \begin{theoreme}
+        Let $\vec{u} \in \mathcal{K}^k$ where $\mathcal{K}$ is an abelian group. The polynomial $P_{\vec{u}}$ is of degree $k-1$. If there exists $k$ elements all distinct $a_1, \ldots, a_k$ of $\mathcal{K}$ such that $P_{\vec{u}}\left(a_i\right) = 0$, then $\vec{u}= \vec{0}$
+    \end{theoreme}
+    This is saying that you cannot write your polynomial with more this $\left(x-a\right)$ than k times.
+    \begin{subparag}{Proof}
+        Here we are doing the proof on finite field which is enough for us (but the real theorem is true even on abelian group $\mathcal{K}$ which is infinite). \\
+        Let $\phi$ the mapping $\mathcal{K}^k \to \mathcal{K}^k$ which has $\vec{v} \in \mathcal{K}^k$ abritrary being associated with $\left(P_{\vec{v}}\left(a_1\right), \ldots, P_{\vec{v}}\left(a_k\right)\right)$. The hypothesis is that if $\phi \left(\vec{u}\right) =  \vec{0}$ we want to show that $\vec{u}= \vec{0}$.\\
+        To do so, we will show that $\phi$ is injective. By the pigeon hole principle, because the set of départ and the set d'arrivée, are finite and of same cardinality, we juste have to prove that it is surjective, which is what we will do.\\
+        Let $\left(x_1, \ldots, x_k\right) \in \mathcal{K}^k$  be an arbitrary vector. Let us look for a polynomial $P$ of degree $\leq k-1$ such that $\left(P\left(a_1\right) = x_1, \ldots, P\left(a_k\right) =  x_k\right)$. Such a problem is called an interpolation: the value of $x_i$ and the point of evaluation $a_i$ are known and we need to find the polynomial d'interpolation of \important{Lagrange}. Let $Q_i, i = 1, \ldots$ the polynomial defined by:
+        \begin{align*} 
+            Q_1\left(X\right) =  \frac{\left(X-a_1\right)\cdots\left(X-a_{i-1}\right)\left(X-a_{i+1}\right)\cdots\left(X-a_k\right)}{\left(a_i - a_1\right)\cdots\left(a_i - a_{i-1}\right)\left(a_i-a_{i+1}\right)\cdots\left(a_i-a_k\right)}
+        \end{align*}
+        \begin{framedremark}
+        Here what we are doing is skipping the $a_i$ coefficient and putting all the zero possible for all other $a_n$. This is the reason why for every element except $a_i$ $Q_i\left(X\right) = 0$.\\
+        The reason why it is $1$ when $X = a_i$ is:\\
+        If you take the polynomial at $a_i$, you get:
+        \begin{align*} 
+            Q_1\left(X\right) =  \frac{\left(a_i-a_1\right)\cdots\left(a_i-a_{i-1}\right)\left(a_i -a_{i+1}\right)\cdots\left(a_i-a_k\right)}{\left(a_i - a_1\right)\cdots\left(a_i - a_{i-1}\right)\left(a_i-a_{i+1}\right)\cdots\left(a_i-a_k\right)} = 1
+        \end{align*}
+        \end{framedremark}
+        This is a polynomial of degree $\leq k-1$ (the product of $k-1$ termes of degree $1$) and it has the property that $Q_i\left(a_i\right)= 1$ and $Q_i\left(a_j\right) = 0$ for $i \neq j$.\\
+        Soit maintenant $P$ be the polynomial defined by:
+        \begin{align*} 
+            P\left(X\right) = x_1Q_1\left(x\right) + \cdots + x_kQ_k\left(X\right)
+        \end{align*}
+        Such that $P$ is a polynomial of degree $\leq k-1$ (because we are doing the sum of all the polynomial of degree $k-1$).\\
+        Let $v_1 = $ the coefficient of degree $0$ of $P$, etc $\ldots$ $v_k = $the coefficient of de degree $k-1$ of $P$, such that $P = P_{\vec{v}}$ and then $\psi\left(\vec{v}\right) =  \vec{x}$.\\
+        We have then shown that $\psi$ is surjective.\\
+        Therefore, $\phi$ is injective and $\phi\left(\vec{0}\right) = \vec{0}$. Finally, $\vec{u}$ and $\vec{0}$ has the same image by $\phi$ which leads that $\vec{u} =  \vec{0}$.
+    \end{subparag}
+\end{parag}
+
+
+
+\begin{parag}{Linearity of Reed-Solomon codes:}
+    In fact, the reed Solomon code are linear codes:
+    \begin{theoreme}
+        A Reed-Solomon codes of parameters $\left(n, k\right)$ is a linear blockcode of length $n$ and dimension $k$.
+    \end{theoreme}
+    
+    \begin{framedremark}
+    In order to prove this, we have to show that the subspace $\mathcal{C}$ is a vector space of $\mathcal{C}^n$
+    \end{framedremark}
+    \begin{subparag}{Proof}
+        First we will prove the linearity. let $\vec{x}$ and $\vec{x}'$ two words of the code. Therefore it exists $\vec{u}, \vec{u}'$ such that:
+        \begin{align*} 
+            P_{\vec{u}}\left(a_j\right) =  x_j\\
+            P_{\vec{u}'}\left(a_j\right) =  x_j'
+        \end{align*}
+        For $j = 1, \ldots, n$. It is immediate to see that $P_{\vec{u} + \vec{u}'}\left(X\right) = P_{\vec{u}}\left(X\right) + P_{\vec{u}'}\left(X\right)$ therefore, $P_{\vec{u} + \vec{u}'}\left(a_j\right) = P_{\vec{u}}\left(a_j\right) + P_{\vec{u}'}\left(a_j\right)$, in other words:
+        \begin{align*} 
+            x_j + x_j' =  P_{\vec{u} + \vec{u}'}\left(a_j\right)
+        \end{align*}
+        Therefore the word $\vec{x} + \vec{x}'$, where the generic terms is $x_j + x_j'$ is a codeword (corresponding to $\vec{u} + \vec{u}'$). In the same way, for all $\lambda \in \mathcal{K}$, the word $\lambda\vec{x}$ is a codeword (corresponding to $\lambda\vec{u}$). Therefore $\mathcal{C}$ is a vectorial subspace of $\mathcal{K}^n$.(here taking the definition of how to reed Solomon code are defined is useful to understand this proof)\\
+        Now we have to chose that dim$\left(\mathcal{C}\right) = k$. In order to prove this, we will find a basis of $\mathcal{C}$ of cardinality of $k$. Let $\left(\vec{e}^i\right), i = 1, \ldots, k$ the canonic basis of $\mathcal{K}^k$ and $\vec{x}^i$ the codeword corresponding at $\vec{e}^i$. Let us show that $\left(\vec{x}^i\right), i =1, \ldots, k$ is a basis of $\mathcal{C}$.\\
+        Every messae can be written:
+        \begin{align*} 
+            \vec{u} =  u_1\vec{e}^1 + \cdots + u_k\vec{e}^k
+        \end{align*}
+        and the corresponding codeword:
+        \begin{align*} 
+            \vec{x} = u_1\vec{x}^1 + \cdots + u_k\vec{x}^k
+        \end{align*}
+        Therefore, $\left(\vec{x}^i\right), i = 1, \ldots, k$ span $\mathcal{C}$.\\
+        Let us now show that it is linearly indepedent
+    \end{subparag}
+\end{parag}
+
