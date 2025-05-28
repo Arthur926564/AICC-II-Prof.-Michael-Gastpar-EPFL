@@ -105,27 +105,211 @@
     In order to prove this, we have to show that the subspace $\mathcal{C}$ is a vector space of $\mathcal{C}^n$
     \end{framedremark}
     \begin{subparag}{Proof}
-        First we will prove the linearity. let $\vec{x}$ and $\vec{x}'$ two words of the code. Therefore it exists $\vec{u}, \vec{u}'$ such that:
-        \begin{align*} 
-            P_{\vec{u}}\left(a_j\right) =  x_j\\
-            P_{\vec{u}'}\left(a_j\right) =  x_j'
-        \end{align*}
-        For $j = 1, \ldots, n$. It is immediate to see that $P_{\vec{u} + \vec{u}'}\left(X\right) = P_{\vec{u}}\left(X\right) + P_{\vec{u}'}\left(X\right)$ therefore, $P_{\vec{u} + \vec{u}'}\left(a_j\right) = P_{\vec{u}}\left(a_j\right) + P_{\vec{u}'}\left(a_j\right)$, in other words:
-        \begin{align*} 
-            x_j + x_j' =  P_{\vec{u} + \vec{u}'}\left(a_j\right)
-        \end{align*}
-        Therefore the word $\vec{x} + \vec{x}'$, where the generic terms is $x_j + x_j'$ is a codeword (corresponding to $\vec{u} + \vec{u}'$). In the same way, for all $\lambda \in \mathcal{K}$, the word $\lambda\vec{x}$ is a codeword (corresponding to $\lambda\vec{u}$). Therefore $\mathcal{C}$ is a vectorial subspace of $\mathcal{K}^n$.(here taking the definition of how to reed Solomon code are defined is useful to understand this proof)\\
-        Now we have to chose that dim$\left(\mathcal{C}\right) = k$. In order to prove this, we will find a basis of $\mathcal{C}$ of cardinality of $k$. Let $\left(\vec{e}^i\right), i = 1, \ldots, k$ the canonic basis of $\mathcal{K}^k$ and $\vec{x}^i$ the codeword corresponding at $\vec{e}^i$. Let us show that $\left(\vec{x}^i\right), i =1, \ldots, k$ is a basis of $\mathcal{C}$.\\
-        Every messae can be written:
-        \begin{align*} 
-            \vec{u} =  u_1\vec{e}^1 + \cdots + u_k\vec{e}^k
-        \end{align*}
-        and the corresponding codeword:
-        \begin{align*} 
-            \vec{x} = u_1\vec{x}^1 + \cdots + u_k\vec{x}^k
-        \end{align*}
-        Therefore, $\left(\vec{x}^i\right), i = 1, \ldots, k$ span $\mathcal{C}$.\\
-        Let us now show that it is linearly indepedent
+        To prove this we will do as we did in linear algebra:\\
+            Let $\vec{u}, \vec{v} \in \mathbb{F}^k$ and $\alpha \in \mathbb{F}$.Notice that:
+            \begin{align*} 
+                P_{\alpha \vec{u}}\left(x\right) =  \alpha u_1 + \alpha u_2x + \cdots + \alpha u_kx^{k-1}= \alpha P_{\vec{u}}\left(x\right)
+            \end{align*}
+            For the second clause:
+            \begin{align*} 
+                P_{\vec{u} + \vec{v}}\left(x\right) = \left(u_1 + v_1\right) + \left(u_2 + v_2\right)x + \cdots + \left(u_k + v_k\right)x^{k-1} = P_{\vec{u}}\left(x\right) + P_{\vec{v}}\left(x\right)
+            \end{align*}
+            Hence:
+            \begin{align*} 
+                P_{\alpha \vec{u} + \vec{v}}\left(x\right) =  \alpha P_{\vec{u}}\left(x\right) + P_{\vec{v}}\left(x\right)
+            \end{align*}
+            Then, is we have the following mapping
+            \begin{align*} 
+                \vec{u} \to \vec{x}  \in \mathcal{C}\\
+                \vec{v} \to \vec{y} \in \mathcal{C}
+            \end{align*}
+            Then we can say that 
+            \begin{align*} \alpha \vec{u} + \vec{v} \to \alpha \vec{x} + \vec{y} \in \mathcal{C} \end{align*}
     \end{subparag}
 \end{parag}
+\begin{parag}{Design-parameters $k$ }
+    \begin{theoreme}
+        The design parameter $k$ is indeed the dimension of the RS-code.
+    \end{theoreme}
+    \begin{subparag}{Proof}
+        It suffices to prove that the map is injective (one to one) implying that there are $\left[\text{card}\left(\mathbb{F}\right)\right]^k$ disctinct codewords, hence that $k$ is the dimension of the code.\\
+        When we proved the fundamental theorem of algebra, we showed that the map:
+        \begin{align*} 
+            \psi: \mathbb{F}^k \to \mathbb{F}^k\\
+            \vec{u} \to \left(P_{\vec{u}}\left(a_{1}\right), \ldots, P_{\vec{u}}\left(a_k\right)\right)
+        \end{align*}
+        is one to one.\\
+        This garantese the encoding map:
+        \begin{align*}  
+            \mathbb{F}^k \to \mathcal{C} \\
+            \vec{u} \to \left(P_{\vec{u}}\left(a_i\right), \ldots, P_{\vec{u}}\left(a_k\right), P_{\vec{u}}\left(a_{k+1}\right), \ldots, P_{\vec{u}}\left(a_n\right)\right)
+        \end{align*}
+    is one to one
+    \end{subparag}
+    
+\end{parag}
+\begin{parag}{Reed solomon Code are MDS}
+    \begin{theoreme}
+        Reed Solomon code are MDS
+    \end{theoreme}
+    \begin{subparag}{proof}
+        We want to prove that $d_{min} =  n- k + 1$:
+        \begin{itemize}
+            \item Let $\vec{u} \in \mathbb{F}^k$ be a non zero information vector. $P_{\vec{u}}\left(x\right)$ is a non zero polynomial of degree at most $k-1$. Hence it has at most distinct $k-1$ roots.
+            \item The corresponding codeword $\vec{c}$ (obtained by evaluating $P_{\vec{u}}\left(x\right)$ at $n$ distince values) has at most $k-1$ zeros
+            \item Hence $w\left(\vec{c}\right) \geq n \left(k-1\right) = n-k + 1 \mathspace \forall \vec{c}$ 
+            \item Since $\vec{c}$ is an arbitrary non zero codeword and RS code are linear code
+                \begin{align*} d_{min} \leq n - k  + 1 \end{align*}
+            \item By the Singleton's bound, $d_{min} \leq n - k + 1$
+        \end{itemize}
+        Hence $d_{min} =  n-k + 1$
+    \end{subparag}
+\end{parag}
+\subsubsection{Reed Solomon is goated}
+\begin{parag}{Theorem Textbook 14.3}
+    \begin{theoreme}
+    A Reed Solomon code with design parameters $k$ and $n$ is linear $\left(n, k\right)$ code of minimum distance $d_{min} = n-k+1$, i.e. it attains singleton's bound with equality
+    \end{theoreme}
+    \begin{framedremark}
+    Note that the condition:
+    \begin{align*} \left|\mathbb{F}\right| \geq n \end{align*}
+    Is necessary or else we can't find $n$ discting field elements $a_1, \ldots, a_n$.
+    \end{framedremark}
+\end{parag}
+
+
+
+\begin{parag}{Exercise}
+    Find a generator matrix $G$ for this code over $\mathbb{F}_3$.\\
+    Here because we are in $F_{3}$ we know that $n = 3$ to be able to have $a_1, a_2, a_3$ distinct elements ($\left|\mathbb{F}_3\right| = 3$), we then take $k = 2$. We have here $9$ distincts vectors and each has a mapping like this:
+
+    \begin{center} \begin{tabular}{c|c|c}$\vec{u}$ & $P_{\vec{u}}\left(x\right)$ & $\vec{c}$ \\ \hline \hline 00 & 0 & 000 \\ \hline 01 & x & 012  \\ \hline
+     02 & 2x & 021 \\ 1\hline
+0 & 1 & 111 \\ \hline
+11 & 1 + x & 120 \\ \hline
+12  & 1 + 2x & 102 \\ \hline
+20  & 2 & 222 \\ \hline
+21 & 2 + x & 210  \\\hline
+     22 & 2 + 2x & 210 \end{tabular} \end{center} 
+\end{parag}
+
+To make the matrix $G$ we need to find two codewords that are linearly independent\\
+Here are a few choices:
+\begin{align*} 
+    G = \begin{pmatrix} 0 & 1 & 1 \\ 1 & 1 & 1 \end{pmatrix} \mathspace G = \begin{pmatrix} 1 & 2 & 0 \\ 2 & 0 & 1 \end{pmatrix} \mathspace G = \begin{pmatrix} 2 & 1 & 0 \\ 1 & 0 & 2 \end{pmatrix} 
+\end{align*}
+We just recall that each generator matrix defined an input output map.\\
+The map that we originally used to define $RS$ coes:
+\begin{align*} \vec{u} \to P_{\vec{u}}\left(x\right) \to \vec{c} =  P_{\vec{u}}\left(a_1\right), \ldots, P_{\vec{u}}\left(a_n\right) \end{align*}
+is just one of many possible maps. (each $G$ gives a different mapping (like $\vec{u}G_1 \neq \vec{u}G_2$ but still in the same $\mathcal{C}$).\\
+In fact there are $\left(q^k-1\right)\left(q^k-q\right)\cdots\left(q^k - q^{k-1}\right)$ maps for a linear code of dimension $k$ over $\mathbb{F}_q$.
+\end{parag}
+\begin{parag}{Exercise}
+    Which of the following is a valid parity check matrix? (for the same code)
+    \begin{itemize}
+        \item $A =  \begin{pmatrix} 1 & 1 & 1 \\ 0 & 1 & 2 \end{pmatrix} $
+        \item $B =  \begin{pmatrix} 0 & 1 & 2 \\ 1 & 0 & 2 \end{pmatrix} $
+        \item $C =  \begin{pmatrix} 1 & 1 & 1 \end{pmatrix} $
+    \end{itemize}
+\begin{subparag}{Solution}
+    First we know that the parity check matrix is of dimension $n-k \times n$, which here is $3-2 \times 3$ which can only be the second.\\
+    Moreover, we can check also with the definition of the codeword like this:
+    \begin{align*} \vec{y} \in \mathcal{C} \iff \vec{y}H^T =  \vec{0} \end{align*}
+\end{subparag}
+Now if we wanted to have the generator matrix that give s the same result as the encoding map of the table how can we do it?\\
+The easiest way is to check for two vectors $\left(1, 0\right)$ and $\left(0, 1\right)$ and put their encoding in the rows of  $G$:
+\begin{align*} 
+    \left(1, 0\right)G =  \left(1, 1, 1\right)\\
+    \left(0, 1\right)G = \left(0, 1, 2\right)
+\end{align*}
+Which leads to:
+\begin{align*} 
+    G =  \begin{pmatrix} 1 & 1 & 1 \\ 0 & 1 & 2 \end{pmatrix} 
+\end{align*}
+\end{parag}
+\begin{parag}{More generally}
+    If we wanted the generator matrix for a given encoding map (like we just did), it suffices to find the codeword that correspond to the following length $k$ information words:
+    \begin{align*} 
+        \left(1, 0, 0, &\ldots, 0, 0\right)\\
+        \left(0, 1 0, &\ldots, 0, 0\right)\\
+        \left(0, 0, 1, &\ldots, 0, 0\right)\\
+        &\vdots \\
+        \left(0, 0, 0, &\ldots, 1, 0\right)\\
+        \left(0, 0, 0, &\ldots, 0, 1\right)\\
+    \end{align*}
+    The corresponding codewords are linearly independent and are $k$ in number. Hence they form a basis.
+    \begin{subparag}{Proof of linearly independent}
+        We want to prove that a linear encoding map sends linearly independent information vectors to linearly independent codewords (linearly independent words $\to$ linearly independent codewords)\\
+        Let $\vec{u}_i \in \mathbb{F}^k, i = 1, \ldots, k$ be a collection of linearly independent information vectors and let $\vec{c}_i\in \mathbb{F}^n$ be the corresponding codewords.\\
+        We prove that the codewords are linearly independent.\\
+        Suppose , to the contrary that the codewords are linearly dependent, i.e.,
+        \begin{align*} \sum_{i =  1}^{k} \lambda_i\vec{u}_i = 0 \end{align*}
+        Where there are at least a $\lambda_i \neq 0$, Then:
+        \begin{align*} 
+            \sum_{i = 1}^{k} \lambda_i\vec{u}_i = 0
+        \end{align*}
+        This is true because we know that the encoding map is \important{injective} and injective implies that there are only one element that goes to $0$ and it is $0$\\
+        Which contradicts the assumption that the information vectors are linearly independent. In particular, the map that we used to define the code sends $\vec{u} \in \mathbb{F}^k$ to:
+        \begin{align*} 
+            \vec{c} =  \left(P_{\vec{u}}\left(a_1\right), \ldots, P_{\vec{u}}\left(a_n\right)\right)
+        \end{align*}
+        if $\vec{u}$ has $1$ at position $i$ and $0$ elsewhere, then $P_{\vec{u}}\left(x\right) =  x^{i-1}$\\
+        Hence, the map the we have used to defined RS codes has the generator matrix:
+        \begin{align*} 
+            G =  \begin{pmatrix} 1 & 1 & 1 & \ldots & 1 \\ a_1 & a_2 & a_3 & \ldots & a_n \\ \left(a_1\right)^2 & \left(a_2\right)^2 & \left(a_3\right)^2 & \ldots & \left(a_n\right)^2 \\ \vdots & \vdots & \vdots & \ddots & \vdots\\ \left(a_1\right)^{k-1} & \left(a_2\right)^{k-1} & \left(a_3\right)^{k-1} & \cdots & \left(a_n\right)^{k-1}
+            \end{pmatrix} 
+        \end{align*}
+    \end{subparag}
+\end{parag}
+\begin{parag}{Example}
+    CDs use cross Interleaved Reed Solomon Codes (CIRC) as follows:
+    \begin{itemize}
+        \item Each byte of the source is seen as an element of $\mathbb{F} =  \mathbb{F}_{2^8}$
+        \item Source symbols, are encoded using a $\left(28, 24\right)$ RS code over $\mathbb{F}$
+        \item The elements of a sequence of many codewords are interleaved
+        \item The result is encoded using a $\left(32, 28\right)$ RS code over $\mathbb{F}$
+    \end{itemize}
+    
+    Notice that both codes have $d_{min} = 5$, but this small distance is compensated by the interleaver which distribute strings of error among many codewords.\\
+    The end result is that error bursts up to 4000 bits can be corrected. We have roughly that many bits in a track segment of length 2.5mm
+\end{parag}
+
+\subsubsection{Summary of chapter 3}
+\begin{parag}{Linear code: basis properties, Design, Decoding}
+    \begin{itemize}
+        \item Finite field: A finite set with two operations (sum and product) satisfying the natural properties (as you know them over the reals)
+            \begin{itemize}
+                \item Only exists if the cardinality of the finite set is a prime power, card$\left(\mathbb{F}\right) =  p^m$
+            \end{itemize}
+        \item Vectors spaces over finite field. Subspaces, Basis
+        \item Linear code = Subspace of a vector space over a finite field
+        \item Generator matrix (= collection of vectors spanning the subspace)
+            \begin{itemize}
+                \item Particularly desirable form: Systematic generator matrix
+            \end{itemize}
+        \item Parity check matrix
+        \item Key example: Hamming codes
+    \end{itemize}
+\end{parag}
+\begin{parag}{Reed-Solomon Codes}
+    \begin{itemize}
+        \item A very popular class of linear codes over a finite field $\mathbb{F}$, They are MDS
+        \item Block length has to be $n \leq \left|\mathbb{F}\right|$ (so we need large finite fields)
+        \item They can be neatly described via polynomials
+    \end{itemize}
+\end{parag}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

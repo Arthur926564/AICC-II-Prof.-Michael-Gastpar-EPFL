@@ -1,0 +1,72 @@
+\lecture{28}{2025-05-28}{Last lecture}{}
+   
+   
+ I juste wanted to make it juste clearer what is lagrange's interpolation polynomials (because in the book it isn't really mentionned):
+ \subsubsection{Lagrange's interpolation polynomials}
+ \begin{parag}{Interpolation via polynomials}
+     \begin{subparag}{Problem}
+         Given a field $\mathbb{F}$ and $k$ pairs $\left(a_i, y_i\right)\in \mathbb{F}^2$, where the $a_i$ are all distinct, is there a polynomial $P\left(X\right)$ over $\mathbb{F}$ of degree at most $k-1$ (hence described by at most $k$ coefficients) such that:
+         \begin{align*} 
+             P\left(a_i\right) =  y_i, \mathspace i = 1, \ldots k
+         \end{align*}
+     \end{subparag}
+     The answer is yes, and we obtain those via Lagrange's interpolation polynomials.\\
+     This is the same process that we explained in the proof of yeasterday (in the remark). For instance let us take some examples:
+     \begin{subparag}{Example}
+         We first fix a field $\mathbb{F}$ and disctinct field elements $a_1, a_2, a_3$ as well as $y_1, y_2, y_3  $ (not necessarily distinct).\\
+         We are looking for a polynomial $P\left(X\right)$ of degree at most $2$ ($k-1 $) and coefficients in $\mathbb{F}$ such that $P\left(a_i\right) =  y_i$.\\
+         Suppose we can find a polynomial $Q_1\left(x\right)$ of degree at most $2$, such that:
+         \begin{align*} 
+             Q_1\left(x\right) =  
+             \begin{cases}
+                 1, \mathspace x = a_1\\
+                 0, \mathspace x =  a_i \neq a_1
+             \end{cases}
+         \end{align*}
+         (which is the same thing for our $Q_i\left(X\right)$ before)\\
+         Now we suppose that $Q_2\left(x\right)$ behaves the same as for $a_2$ and the same for $Q_3\left(x\right)$ and $a_3$.\\
+         Then the desired polynomial is
+         \begin{align*} P\left(X\right) = y_1Q_1\left(x\right) + y_2Q_2\left(x\right) + y_3Q_3\left(x\right) \end{align*}
+         Now if we want to construct the first $Q\left(X\right)$ this is then:
+         \begin{align*} 
+             Q_1\left(X\right) = \frac{\left(x - a_2\right)\left(x-a_3\right)}{\left(a_1 - a_2\right)\left(a_1 - a_3\right)}
+         \end{align*}
+         We do the same for the two other $Q_i$.
+     \end{subparag}
+     \begin{subparag}{Concrete example}
+         Over $\mathbb{F}_5$ find the polynomial $P\left(X\right)$ of degree not xceeding $2$ for which $P\left(a_i\right) =  y_i$ and this for:
+         \begin{center} \begin{tabular}{cc}$i$ & $\left(a_i, y_i\right)$ \\ 1 & $\left(2, 3\right)$ \\ 2 & $\left(1, 0\right)$ \\ 3 & $\left(0, 4\right)$ \end{tabular} \end{center} 
+         To do so, we then will use the same process as before:
+         \begin{align*} 
+             P\left(x\right) = y_1Q_1\left(x\right) + y_2Q_2\left(x\right) + y_3Q_3\left(x\right)
+         \end{align*}
+         We then construct the $Q_i$:
+         \begin{align*} 
+             P\left(x\right) &= 3\left(\frac{\left(x-1\right)x}{\left(2-1\right)2}\right) + 0 \cdot  \cdots + 4\frac{\left(x-2\right)\left(x-1\right)}{\left(4-2\right)\left(4-1\right)}\\
+             &= 3\left(x-1\right)x + 3\left(x-2\right)\left(x_1\right)\\
+             &= 4x^2 - 4x + 2x^2 -6x + 4\\
+             &= x^2 + 4
+         \end{align*}
+     \end{subparag}
+ \end{parag}
+ \begin{parag}{Conclusion}
+     It should be obvious from the above example that we can proceed similarly for any field $\mathbb{F}$ for any positive integer $k$, and for any given set of $k$ points with components in $\mathbb{F}$.
+ \end{parag}
+ \begin{parag}{Fundamental theorem of Algebra}
+     I already wrote this before but too much is better than not enough:
+     \begin{theoreme}
+     Let $P\left(x\right)$ be a polynomial of degree at most $k-1$ over a field. if $P\left(x\right) \neq 0$ then the number of its distinct roots is at most $k-1$.
+     \end{theoreme}
+     \begin{subparag}{Example}
+         You can see this it for polynomial of degree $1$: $ax + b$ this is already a ``root'' so the number is one.\\
+         For a polynomial of degree $2$ we can go up to two roots, three for cubic polynomial...
+     \end{subparag}
+     \begin{framedremark}
+     I already done the proof above in lecture 26.
+     \end{framedremark}
+ \end{parag}
+ 
+ 
+ 
+ 
+   
