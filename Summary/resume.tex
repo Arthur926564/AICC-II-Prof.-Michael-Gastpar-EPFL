@@ -1,0 +1,65 @@
+% !TeX program = lualatex
+% Using VimTeX, you need to reload the plugin (\lx) after having saved the document in order to use LuaLaTeX (thanks to the line above)
+
+\documentclass[a4paper]{article}
+
+% Expanded on 2025-06-02 at 17:38:31.
+
+
+\usepackage{../../style}
+
+\title{Résumé AICC II}
+\author{Arthur Herbette}
+\date{Lundi 02 juin 2025}
+
+\begin{document}
+\maketitle
+\section{Théorème est définition}
+
+\begin{definition}
+Un \important{code de source}, ou \important{encodage}, $\Gamma$ est une application bijective $\Gamma: \mathcal{A} \to \mathcal{C}$.
+\end{definition}
+\begin{definition}
+Soit $\Gamma$ un code de source. $\Gamma$ est \important{à décodage unique} si pur toute suite de symbols de code, qui résulte de l'encodage d'une suite de symbole de la source, il existe un décodage unique.
+\end{definition}
+\begin{definition}
+Nous disons qu'un code est \important{instantané}
+\begin{itemize}
+    \item s'il est à décodage unique
+    \item et si à mesure que les séquences de symboles de l'alphabet du code sont reçus, les mots du code peuvent être déterminés sans s'inquiéter des symboles de code suivants.
+\end{itemize}
+\end{definition}
+\begin{definition}
+    On dit qu'un mot de code $c = x_1x_2\ldots x_k$ est \important{prefixe} d'un autre mot de code $c' $ si on peut écrire $c' = x_1x_2x_kx_{k+1}\ldots x_l$ pour un certain $ l \geq k + 1 $. Sur l'arbre du code, cela veut dire que $c'$ est un descendant de $c$. On dit que le code $\Gamma$ est \important{sans préfixe} si aucun mot de code n'est prefixe d'un autre mot de code. Sur l'arbre du code, cela veut dire que aucun mot de code n'est descendant d'un autre mot de code.
+\end{definition}
+\begin{theoreme}
+Un code est sans préfixe si et seulement s'il est instantané
+\end{theoreme}
+
+
+\subsection{Kraft-MCMillan}
+\begin{theoreme}
+Soit $\Gamma$ un code D'aire dont les longueurs des $M$ mots de code sont $l_1, \ldots, l_M$. Si $\Gamma$ est à décodage unique alors il satisfait l'\important{inégalité de Kraft}:
+\begin{align*}D^{-l_1} + \cdots + D^{-l_M} \leq 1 \end{align*}
+Réciproquement, si des nombres $l_1, \ldots, l_M$ satisfont l'inégalité de Kraft, il existe un code D'aire instantané (donc à décodage unique) dont le dictionnaire possède $M$ mots de code et dont les longueurs des mots de code sont $l_1, \ldots, l_M$.
+\end{theoreme}
+
+\begin{theoreme}
+Pour tout code à décodage unique, il existe un code instantané sur les mêmes alphabets de source et de code qui a les mêmes longueurs de mot
+\end{theoreme}
+\subsection{Efficacité d'un code de source}
+\begin{definition}
+Soit une source $S$ d'alphabet $\mathcal{A}$ et de densité de probabilité $p$, et soit $\Gamma$ un code D'aire de la source $S$. La \important{longueur moyenne} du code $\Gamma$ est:
+\begin{align*} 
+    L\left(\Gamma\right) = \sum_{s \in \mathcal{A}}p\left(s\right)l\left(\Gamma \left(s\right)\right)  
+\end{align*}
+L'unité est le symbole de code par symbole de source (si $D = 2$ on dit bits par symbole de source)
+\end{definition} 
+\begin{theoreme}
+Soit une source $S$ d'entropie $H\left(S\right)$ et soit $\Gamma$ un code D'aire de la source $s$. Si $\Gamma$ est à décodage unique, sa longueur moyenne satisfait:
+\begin{align*} L\left(\Gamma\right) \geq \frac{H\left(S\right)}{\log_2 \left(D\right)} \end{align*}
+\end{theoreme}
+
+
+\end{document}
+

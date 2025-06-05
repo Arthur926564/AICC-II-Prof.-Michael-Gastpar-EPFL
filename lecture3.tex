@@ -148,7 +148,8 @@ slide 115.
     \begin{itemize}
         \item The codeword length is defined the obvious way:
         \item Example: 
-            \begin{tabular}[ccc]
+            \begin{center}
+            \begin{tabular}{|c|c|c|}
             \hline
                 $ \mathcal{A}$ & $ \Gamma_B$ & codeword lengths \\
             \hline
@@ -162,6 +163,7 @@ slide 115.
                 $d$ & 1110 & 4
             \hline
              \end{tabular}
+            \end{center}
          \item We would like the average codeword length to be as small as possible.
     \end{itemize}
 \subsection{Kraft McMillan}
@@ -183,10 +185,7 @@ slide 115.
 
 \end{parag}
 
-\begin{parag}{Recall Kraft McMillan}
-    \begin{theoreme}
-        
-    \end{theoreme}
+\begin{parag}{contrapositive of Kraft McMillan part 1}
 \begin{subparag}{Example A}
     For code $A$ we have $2^{-1} + 2^{-2} + 2^{-2} + 2^{-2} = 1.25 > 1$
     .
@@ -265,7 +264,7 @@ slide 115.
             \mathcal{A} = \{a, b, c, d\} \; \; D = 2
         \end{align*}
         Blackboard with table
-        \begin{tabular}[cccc]
+        \begin{tabular}{cccc}
             $s \in \mathcal{A} $ & $ \Gamma (s)$ & $l(s)$ & $p(s)$ \\
             \hline \\ \hline
             \\
@@ -302,7 +301,15 @@ slide 115.
 
 \begin{parag}{Average codeword length: Lower Bound}
     \begin{theoreme}
-        Let $ \Gamma : \mathcal{A} \to \mathcal{C}$ be the encoding map of a D-ary
+        Let $ \Gamma : \mathcal{A} \to \mathcal{C}$ be the encoding map of a D-ary code for the random variable $S \in \mathcal{A}$ .\\
+        If the code is uniquely decodable, then the average codeword length is lower bounded by the entropy of $S$ namely:
+        \begin{align*} 
+            H_D\left(S\right) \leq L\left(S, \Gamma\right)
+        \end{align*}
+        With equality if and only if for all $s \in \mathcal{A}$, $p_S\left(S\right) = D^{-l\left(\Gamma\left(s\right)\right)}$. An equivalent condition is:
+        \begin{align*} 
+            l\left(\Gamma\left(s\right)\right) =  \log_D \frac{1}{P_S\left(S\right)}
+        \end{align*}
     \end{theoreme}
     \begin{subparag}{Proof}
         We want to prove that:

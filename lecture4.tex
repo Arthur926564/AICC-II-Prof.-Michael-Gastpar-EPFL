@@ -1,5 +1,15 @@
 \lecture{4}{2025-02-26}{Continue}{}
 
+\begin{parag}{Little summary of yeasterday}
+    Yeasterday if saw:
+    \begin{itemize}
+       \item Tree representation of source code
+       \item  Definition of uniquely decodable code
+       \item Predix-free $\implies$ uniquely decodable
+    \end{itemize}
+    
+\end{parag}
+
 
 \begin{parag}{Key observation}
     The right hand side of:
@@ -9,21 +19,35 @@
     \begin{align*}
         H_D(S) = \sum_{s \in \mathcal{A}} p(s) \log_D \frac{1}{p_S(s)}
     \end{align*}
-    are identical if $l( \Gamma (s))$
+    are identical if $l( \Gamma (s)) = \log_D \frac{1}{p_S\left(S\right)}$
     \begin{itemize}
         \item Unfortunately $l( \Gamma (s)) = \log_D \frac{1}{p_S(s)}$ is often not possible (not an integer)
-        \item How about choosing
+        \item How about choosing $l\left(\Gamma\left(s\right)\right) =\l\left\lceil \log_D \frac{1}{p_S\left(S\right)} \right\rceil $?
+        \item Is it a valid choice for a prefix free code? (is Kraft's inequality satisfied?)
     \end{itemize}
     
     \begin{theoreme}
         \begin{itemize}
-            \item For every random variable $S \in \mathcal{A}$
+            \item For every random variable $S \in \mathcal{A}$ and every integer $D \geq 2$ there exists a prefix free $D$-ary code such taht for all $s \in \mathcal{A}$:
+                \begin{align*} l\left(\Gamma\left(s\right)\right) = lr\left\lceil -\log_Dp_s\left(s\right) \right\rceil  \end{align*}
+            \item Such coes are called D-ary Shannon-Fano codes
         \end{itemize}
     \end{theoreme}
+    \begin{subparag}{Proof}
+        We know as said earlier that $l_i =  lr\left\lceil - \log_Dp_i \right\rceil $, now we need to check if this length fulfills Kraft's inequality:
+        \begin{align*} 
+            \sum_{i}D^{-l_i} &=  \sum D^{- lr\left\lceil - \log_D p_i \right\rceil }  \\
+            &\leq \sum_{i} D^{\log_Dp_i}\\
+            &= \sum_{i} p_i\\
+            &= 1
+        \end{align*}
+        So here the key idea is that $lr\left\lceil x \right\rceil \geq x$, with this statement, we can easily say that a Shanon-Fano code fullfills Kraft's inequality. 
+    \end{subparag}
 \end{parag}
 
 \begin{parag}{Theorem}
     
+    Now the question is ``is it a good code or not?'', the good thing we shannon-Fano code is that there are \important{guaranteed}. Indeed:
     \begin{theoreme}
         The average codeword length of a D-ary Shannon-Fano code for the random variable $S$ fulfils: 
         \begin{align*}
@@ -38,7 +62,8 @@
        \begin{align*}
            L(S, \Gamma) = \sum_i p_i l_i = \sum_i p_i (-\log_D p_i) = H_D(S)
        \end{align*}
-       Instead we use $l_i = \left\lceil -\log p_i \right \rceil < - \log p_1 + 1 $
+       Instead we use $l_i = \left\lceil -\log p_i \right \rceil < - \log p_1 + 1 $\\
+       Since each term of an average increases by less than $1$, the average itself increases by less than $1$.
        
    \end{subparag} 
 
