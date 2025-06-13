@@ -1,19 +1,22 @@
 \lecture{26}{2025-05-21}{almost the end}{}
 \begin{parag}{How to decode}
-    Hence the coseet decoder can be implemented as follows:
+    Hence the coset decoder can be implemented as follows:
     \begin{enumerate}
         \item We precompute and store the coset leaders and the corresponding syndrome
-        \item To decode $y$, we compute its syndrom $s = yH^T$
+        \item To decode $y$, we compute its syndrome $s = yH^T$
         \item $s$ encodes the row of $y$
         \item We use the lookup table to determine the corresponding coset leader, say, $t_i$
         \item $t_i$ and $y$ uniquely determine the column of $y$ namely $y =  t_i + c_j$
            \item hence $c_j =  y - t_i$
-           \item the decoder  declares
+           \item the decoder  declares that the transmitted codeword is $\bhat{c} =  y -t_i$
     \end{enumerate}
-    
+    To find the information word $\bhat{u}$ that corresponds to $\bhat{c}$ we solve the linear system:
+    \begin{align*}  \bhat{u}G =  \bhat{c}\end{align*}
+    If $G$ is in systematic form, then $\bhat{u}$ consists of the first $k$ components of $\bhat{c}$.
 \end{parag}
 
 
+    
 \begin{parag}{Choosing coset leaders}
    \begin{subparag}{Rule ``MD''}
        In every coset, the leader is the minimum weight sequence.
@@ -26,13 +29,18 @@
        Then we know that the coset decoder will:
        \begin{itemize}
            \item decode: $\vec{y} \to \vec{c}_j$
-           \item Hence $d\left(\vec{y}, \vec{c}_j\right) =  w\left(\vec{t}_i\right)$
+           \item Hence $d\left(\vec{y}, \vec{c}_j\right) =  w\left(\vec{t}_i\right)$ proof
+               \begin{align*} 
+                   d\left(\vec{y}, \vec{c}_j\right) &= w\left(\vec{y} - \vec{c}_j\right)\\
+                                                    &= w \left(\vec{c}_j + \vec{t}_i - c_j\right)\\
+                                                    &= w\left(\vec{t}_i\right)
+               \end{align*}
        \end{itemize}
        Now consider any $\vec{c}_k$:
        \begin{align*} 
            d\left(\vec{y}, \vec{c}_k\right) &= w\left(\vec{y} - \vec{c}_k\right)\\
                                      &= w\left(\vec{c}_j + \vec{t}_i - \vec{c}_k\right)\\
-                                     &= w\left(\left(\vec{c}_k - \vec{c}_k\right) + \vec{t}_i\right)
+                                     &= w\left(\underbrace{\vec{c}_k - \vec{c}_k }_{\in \mathcal{C}} + \vec{t}_i\right)
        \end{align*}
        Now the question is: who is the leader of this?\\
        We know because of $\vec{t}_i$ we know that we are in the row $i$.\\
@@ -53,6 +61,34 @@
     \begin{align*} 
         G = \begin{pmatrix} 1 & 0 & 0 & 0 & 1 & 1 \\ 0 & 1 & 0 & 1 & 0 & 1 \\ 0 & 0 & 1 & 1 & 1 & 0  \end{pmatrix} 
     \end{align*}
+    The standard array has $2^k = 2^3 = 8$ columns and $2^{n-k} =  8$ rows.\\
+    The top row of the standard array is the code, and the left column consists of the elements of $\mathcal{D}_0$.\\
+    This gives
+    \begin{center} \begin{tabular}{c|ccccccc} 000000& 001110 & 010101 & 011011 & 100011 & 101101 & 110110 & 111000 \\ \hline  \\
+    000001 & 001111 & 010100 & 011010 & 100010 & 101100 & 110111 & 111010 \\ 000010 & 001100 & 010111 & 011001 & 100001 & 101111 & 110100 & 111010 \\ 000100 & 001010 & 010001 & 011111 & 100111 & 101001 & 110010 & 111100 \\ 001000 & 000110 & 011101 & 010011 & 101011 & 100101 & 111110 & 110000 \\ 010000 & 011110 & 000101 & 001011 & 110011 & 111101 & 100110 & 101000 \\ 100000 & 101110 & 110101 & 111011 & 000011 & 001101 & 010110 & 0111000 \\ 100100 & 101010 & 110001 & 111111 & 000111 & 001001 & 010010 & 011100 \end{tabular} \end{center} 
+    As the last row, $t_7$ we choose a weight $2$ word that has no yet appeared in any row, here we choose $t_7 = 100100$.\\
+The syndrome lookup table, i.e. the table that associates the coset leader $t_i$ to the syndrome $s_i =  t_iH^T$:
+\begin{center} \begin{tabular}{cc}$t_i$ & $s_i$ \\ 00000000 & 000 \\ 00000001 & 001 \\ 000010 & 010 \\ 000100 & 100 \\ 0010000 & 110 \\ 010000 & 101 \\ 10000000 & 011 \\ 100100 & 111 \end{tabular} \end{center} 
+The code will correct all the weight $1$ channel errors and the weight 2 channel error $100100$. All the other error patterns will lead to a decoding error.
+\begin{subparag}{For example}
+    if $y = 011000$ is received, the decoder determines its syndrome:
+    \begin{align*} 
+        s = yH^T =  011
+    \end{align*}
+    And the corresponding coset leader (in the table): 
+    \begin{align*} t = 10000000 \end{align*}
+    The decoded word is
+    \begin{align*} \bhat{c} =  y - t =  111000 \end{align*}
+
+    Which is indeed a codeword.
+\end{subparag}
+
+\begin{subparag}{Disclaimer}
+    The procedure that we have described requires to store $\left|\mathbb{F}^{\left(n-k\right)}\right|$ coset leaders and the corresponding syndrome.\\
+    While the approach is theoretically appealing,  a lookup table of that size is prohibitive for most codes of practical interest.
+    
+\end{subparag}
+
 
 \end{parag}
 

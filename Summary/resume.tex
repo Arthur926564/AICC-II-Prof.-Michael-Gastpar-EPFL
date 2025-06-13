@@ -1,12 +1,15 @@
-% !TeX program = lualatex
+
 % Using VimTeX, you need to reload the plugin (\lx) after having saved the document in order to use LuaLaTeX (thanks to the line above)
 
 \documentclass[a4paper]{article}
 
 % Expanded on 2025-06-02 at 17:38:31.
 
+\usepackage[bottom=2.5cm, top=2.5cm]{geometry}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{amsfonts}
 
-\usepackage{../../style}
 
 \title{Résumé AICC II}
 \author{Arthur Herbette}
@@ -30,12 +33,13 @@ Nous disons qu'un code est \important{instantané}
 \end{itemize}
 \end{definition}
 \begin{definition}
-    On dit qu'un mot de code $c = x_1x_2\ldots x_k$ est \important{prefixe} d'un autre mot de code $c' $ si on peut écrire $c' = x_1x_2x_kx_{k+1}\ldots x_l$ pour un certain $ l \geq k + 1 $. Sur l'arbre du code, cela veut dire que $c'$ est un descendant de $c$. On dit que le code $\Gamma$ est \important{sans préfixe} si aucun mot de code n'est prefixe d'un autre mot de code. Sur l'arbre du code, cela veut dire que aucun mot de code n'est descendant d'un autre mot de code.
+    On dit qu'un mot de code $c = x_1x_2\ldots x_k$ est \important{préfixe} d'un autre mot de code $c' $ si on peut écrire $c' = x_1x_2x_kx_{k+1}\ldots x_l$ pour un certain $ l \geq k + 1 $. Sur l'arbre du code, cela veut dire que $c'$ est un descendant de $c$. On dit que le code $\Gamma$ est \important{sans préfixe} si aucun mot de code n'est prefixe d'un autre mot de code. Sur l'arbre du code, cela veut dire que aucun mot de code n'est descendant d'un autre mot de code.
 \end{definition}
 \begin{theoreme}
 Un code est sans préfixe si et seulement s'il est instantané
 \end{theoreme}
-
+\begin{comment}
+    
 
 \subsection{Kraft-MCMillan}
 \begin{theoreme}
@@ -60,6 +64,8 @@ Soit une source $S$ d'entropie $H\left(S\right)$ et soit $\Gamma$ un code D'aire
 \begin{align*} L\left(\Gamma\right) \geq \frac{H\left(S\right)}{\log_2 \left(D\right)} \end{align*}
 \end{theoreme}
 
+\end{comment}
+\include{exa2024}
 
 \end{document}
 
